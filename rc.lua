@@ -579,7 +579,7 @@ autorun = true
 autorunApps = 
 { 
 	"killall bash ",
-    "fcitx",
+    --"fcitx",
 	"flameshot",
 	"exec bash sleep 10 &",
  	"bash /home/chroot/.config/awesome/feh.sh",
