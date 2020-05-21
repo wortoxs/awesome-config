@@ -333,8 +333,8 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "o", function() menubar.show() end,
+     Menubar
+    awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -579,7 +579,7 @@ autorun = true
 autorunApps = 
 { 
 	"killall bash ",
-    "fcitx",
+   -- "fcitx",
 	"picom",
 	"flameshot",
 	"exec bash sleep 5 &",
@@ -591,3 +591,7 @@ if autorun then
         awful.util.spawn_with_shell(autorunApps[app])
     end
 end
+-- 自定义快捷键
+-- awful.key({ }, "F7", function () awful.util.spawn("exec 'xbacklight -inc 10'") end)
+
+ -- awful.key({ }, "F8", function () awful.util.spawn("exec xbacklight -set 10") end)
