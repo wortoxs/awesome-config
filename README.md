@@ -1,5 +1,5 @@
 # Hi! world!
-This is awesome isntall the shell       
+This is awesome install the shell       
 You can `git clone https://github.com/denstiny/awesome-config.git`      
 配张图片，hhh       
 ![](https://i.bmp.ovh/imgs/2020/05/fce9611a63c196ee.png)
@@ -7,8 +7,8 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 反正就拷贝一下
 然后    
 `cd awesome-config && bash .install.sh `  
-他会给你自动配置你的awesome ，并且这个配置没有什么依赖，所以任何        
-系统都能用吧，另外我还写了一些其他的配置在里面不喜欢，可以  
+他会给你自动配置你的awesome ，只能在manjaro底下用           
+另外我还写了一些其他的配置在里面。不喜欢的话可以  
 在脚本里面注释掉
 好吧，中文写真的好丑，还是有道翻译一下吧
 I fucked. I can't keep it up. That's all I have

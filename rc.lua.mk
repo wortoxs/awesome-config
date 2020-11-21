@@ -46,6 +46,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+	return 0;
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "xterm"
@@ -89,8 +90,8 @@ myawesomemenu = {
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
-   {"poweroff",terminal .. " -e  poweroff"},
-   {"QQ",terminal .. "-e 'bash /home/chroot/.qq.sh'"}
+   {"poweroff",terminal .. " -e  poweroff"}
+   --{"QQ",terminal .. "-e 'bash /home/chroot/.qq.sh'"}
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -333,8 +334,8 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-     Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    -- Menubar
+    awful.key({ modkey }, "o", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -466,7 +467,7 @@ awful.rules.rules = {
      }
     },
 
-    -- Floating clients.
+    -- Floating clients. 浮动
     { rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
@@ -578,9 +579,14 @@ os.execute"dex -a -e fcitx"
 autorun = true
 autorunApps = 
 { 
-	"killall bash ",
-   -- "fcitx",
-	"picom",
+	"sxhkd",
+	"killall feh ",
+	"qv2ray",
+	"/usr/lib/gsd-xsettings",
+	"killall plasmashell",
+    "fcitx",
+	--"picom",
+	"compton",
 	"flameshot",
 	"exec bash sleep 5 &",
  	"bash /home/chroot/.config/awesome/feh.sh",
@@ -591,7 +597,3 @@ if autorun then
         awful.util.spawn_with_shell(autorunApps[app])
     end
 end
--- 自定义快捷键
--- awful.key({ }, "F7", function () awful.util.spawn("exec 'xbacklight -inc 10'") end)
-
- -- awful.key({ }, "F8", function () awful.util.spawn("exec xbacklight -set 10") end)
