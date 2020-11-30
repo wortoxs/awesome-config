@@ -477,6 +477,8 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+			"Wine",
+			"SimpleScreenRecorder",
           "Arandr",
           "Blueman-manager",
           "Gpick",
@@ -584,9 +586,9 @@ autorunApps =
 	"sxhkd",
 	"xhost +",
 	"/usr/lib/gsd-xsettings",
-	"killall plasmashell",
 	"fcitx",
-	"compton",
+	"compton --benchmark 1000000",
+	"killall plasmashell",
 	"flameshot",
 }
 
