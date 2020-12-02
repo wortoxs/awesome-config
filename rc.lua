@@ -6,7 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
--- Widget and layout library
+-- 小部件和布局库
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
@@ -19,8 +19,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
+-- 检查真棒在启动过程中是否遇到错误并退回
+-- 另一个配置（此代码仅对后备配置执行）
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -396,7 +396,7 @@ for i = 1, 9 do
                         if tag then
                            tag:view_only()
                         end
-				io.popen("feh --randomize --bg-fill ~/Imager")
+				io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
@@ -468,7 +468,7 @@ awful.rules.rules = {
      }
     },
 
-    -- Floating clients.
+    -- Floating clients. 设置窗口浮动
     { rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
@@ -476,7 +476,7 @@ awful.rules.rules = {
 		  "krunner",
           "pinentry",
         },
-        class = {
+        class = { --窗口class ,可以使用xrop获取
 			"Wine",
 			"SimpleScreenRecorder",
           "Arandr",
@@ -517,21 +517,21 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
-    -- Set the windows at the slave,
-    -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
+    -- 将窗口设置在从属设备上，
+    -- 即将其放置在其他对象的末尾，而不是将其设置为主。
+    -- 如果不很棒，则启动awful.client.setslave（c）结束
 
     if awesome.startup
       and not c.size_hints.user_position
       and not c.size_hints.program_position then
-        -- Prevent clients from being unreachable after screen count changes.
+        -- 更改屏幕计数后，防止客户端无法访问。
         awful.placement.no_offscreen(c)
     end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
+    -- 标题栏按钮
     local buttons = gears.table.join(
         awful.button({ }, 1, function()
             c:emit_signal("request::activate", "titlebar", {raise = true})
