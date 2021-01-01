@@ -28,3 +28,4 @@ Comment it out in the script
 Well, the Chinese photo is very ugly, or youdao translation 
 
 ![awesome.jpg](https://ftp.bmp.ovh/imgs/2020/05/b4baa7ed0ca7ae54.png)
+# 更改compuon配置
