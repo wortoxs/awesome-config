@@ -175,7 +175,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
  --awful.tag({ "A", "W", "E", "S", "O", "M", "E", "W", "M" }, s, awful.layout.layouts[1])
-    local names = { "One:Code", "Tow:Web ", "Three", "Four", "Five", "Six", "Seven", "Eight:Music", "Nine:QQ"  }
+    local names = { "One:Code", "Tow:Web ", "Three", "Four", "Five", "Six", "Seven", "Eight:Music", "Nine:QQ" ,"temp" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
     local layouts = { l.tile, l.tile, l.tile, l.fair, l.max,
 --local layouts = l.max,
@@ -386,7 +386,7 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 0, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
