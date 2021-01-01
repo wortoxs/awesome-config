@@ -206,26 +206,26 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
-
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+--    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+--
+--    -- Add widgets to the wibox
+--    s.mywibox:setup {
+--        layout = wibox.layout.align.horizontal,
+--        { -- Left widgets
+--            layout = wibox.layout.fixed.horizontal,
+--            mylauncher,
+--            s.mytaglist,
+--            s.mypromptbox,
+--        },
+--        s.mytasklist, -- Middle widget
+--        { -- Right widgets
+--            layout = wibox.layout.fixed.horizontal,
+--            mykeyboardlayout,
+--            wibox.widget.systray(),
+--            mytextclock,
+--            s.mylayoutbox,
+--        },
+--    }
 end)
 -- }}}
 
@@ -396,7 +396,7 @@ for i = 1, 9 do
                         if tag then
                            tag:view_only()
                         end
-				io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
+				--io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
@@ -477,8 +477,10 @@ awful.rules.rules = {
           "pinentry",
         },
         class = { --窗口class ,可以使用xrop获取
-			"Wine",
-			"SimpleScreenRecorder",
+		"Wine",
+  	 	"SimpleScreenRecorder",
+		  "Mtodo",
+		  "Steam",
           "Arandr",
           "Blueman-manager",
           "Gpick",
@@ -584,8 +586,12 @@ autorun = true
 autorunApps =  
 { 
 	"sxhkd",
+	"clash &",
+	"qv2ray",
 	"xhost +",
 	"/usr/lib/gsd-xsettings",
+	"bash ~/.config/awesome/feh.sh",
+	"xfce4-panel",
 	"fcitx",
 	"compton --benchmark 1000000",
 	"killall plasmashell",
@@ -598,4 +604,4 @@ if autorun then
         awful.util.spawn_with_shell(autorunApps[app])
     end
 end
-io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
+--io.popen("bash /home/aerocn/.config/awesome/feh.sh &")

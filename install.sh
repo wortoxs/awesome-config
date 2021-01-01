@@ -24,3 +24,8 @@ sudo docker pull bestwu/qq:office
 
 clear && echo "Install OK"
 
+#
+ #export EDITOR=nvim
+ #export LANG=en_US.UTF-8
+#export WINEARCH=win32
+#ffmpeg -i [video] -f image2 output_%d.jpg
