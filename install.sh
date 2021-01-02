@@ -4,7 +4,7 @@ sudo pacman -Syy
 sudo pacman -S axel
 sudo cp -r pacman.d /etc &
 sudo cp pacman.conf /etc/ &
-sudo pacman -S awesome xorg feh sxhkd alacritty  vim neovim flameshot gnome-tweaks rofi docker fcitx fcitx-rime fcitx-configtool
+sudo pacman -S awesome xorg feh sxhkd alacritty  vim neovim flameshot gnome-tweaks rofi docker fcitx fcitx-rime fcitx-configtool xfce4-panel
 bash blackarch.sh
 sudo pacman -Syyu
 \cp -r alacritty ~/.config &
