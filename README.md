@@ -6,7 +6,8 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 我艹，装不下去了，词汇量就这么点    
 反正就拷贝一下
 然后    
-`cd awesome-config && bash .install.sh `  
+~~` cd awesome-config && bash .install.sh  `~~  
+脚本已经无法运行，可以根据脚本手动安装  
 他会给你自动配置你的awesome ，只能在manjaro底下用           
 另外我还写了一些其他的配置在里面。不喜欢的话可以  
 在脚本里面注释掉
