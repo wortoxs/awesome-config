@@ -2,20 +2,20 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
+-- 标准的超赞图书馆
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 -- 小部件和布局库
 local wibox = require("wibox")
--- Theme handling library
+-- 主题处理库
 local beautiful = require("beautiful")
--- Notification library
+-- 通知库
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
+-- 为vim和其他应用程序启用热键帮助小部件
+-- 当打开具有匹配名称的客户端时：
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Error handling
@@ -44,10 +44,10 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
+-- 主题定义颜色，图标，字体和壁纸。
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
--- This is used later as the default terminal and editor to run.
+-- 以后将其用作要运行的默认终端和编辑器。
 -- terminal = "xterm"
 terminal = "st"
 editor = os.getenv("EDITOR") or "nvim"
