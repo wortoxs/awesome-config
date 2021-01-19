@@ -46,12 +46,12 @@ end
 
 -- {{{ Variable definitions
 -- 主题定义颜色，图标，字体和壁纸。
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- 主题
 
 -- 以后将其用作要运行的默认终端和编辑器。
 -- terminal = "xterm"
 terminal = "st"
-editor = os.getenv("EDITOR") or "nvim"
+editor = os.getenv("EDITOR") or "nvim" -- 设置默认编辑器
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -91,6 +91,7 @@ myawesomemenu = {
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
    {"poweroff",terminal .. " -e  poweroff"},
+   {"st",terminal .. "-e st"},
    {"QQ",terminal .. "-e 'bash /home/chroot/.config/SpeekABread/QQ.sh'"}
 }
 
@@ -200,33 +201,33 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- 创建任务列表小部件
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+  --  s.mytasklist = awful.widget.tasklist {
+  --      screen  = s,
+  --      filter  = awful.widget.tasklist.filter.currenttags,
+  --      buttons = tasklist_buttons
+  --  }
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+  -- -- 创建wibox
+  --  s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+  -- -- 将小部件添加到wibox
+  --  s.mywibox:setup {
+  --      layout = wibox.layout.align.horizontal,
+  --      { -- Left widgets
+  --          layout = wibox.layout.fixed.horizontal,
+  --          mylauncher,
+  --          s.mytaglist,
+  --          s.mypromptbox,
+  --      },
+  --      s.mytasklist, -- Middle widget
+  --      { -- Right widgets
+  --          layout = wibox.layout.fixed.horizontal,
+  --          mykeyboardlayout,
+  --          wibox.widget.systray(),
+  --          mytextclock,
+  --          s.mylayoutbox,
+  --      },
+  --  }
 end)
 -- }}}
 
@@ -238,7 +239,7 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- {{{ Key bindings
+-- {{{ 键绑定
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -289,7 +290,7 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "e", awesome.quit,
+    awful.key({ modkey, "Shift"   }, "e", awesome.quit, -- awesome quit
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact( 0.05)          end,
@@ -397,6 +398,7 @@ for i = 0, 9 do
                         if tag then
                            tag:view_only()
                         end
+				 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &") 
 				--io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
                   end,
                   {description = "view tag #"..i, group = "tag"}),
@@ -595,10 +597,11 @@ autorunApps =
 	"bash ~/.config/awesome/feh.sh &",
 	"xfce4-panel",
 	"fcitx",
-	--"bash ~/.config/awesome/compton.sh &",
+--	"bash ~/.config/awesome/compton.sh &",
 	"killall plasmashell",
 	"flameshot",
 }
+
 
 
 if autorun then
@@ -621,6 +624,5 @@ end
 
 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
 ---- 间隙
--- beautiful.useless_gap = 0
---maximized("~/Imager/7992.jpg",nil,true,0)
+--beautiful.useless_gap = 5
 
