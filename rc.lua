@@ -6,6 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+require("collision")()  
 -- 小部件和布局库
 local wibox = require("wibox")
 -- 主题处理库
@@ -198,7 +199,7 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = taglist_buttons
     }
 
-    -- Create a tasklist widget
+    -- 创建任务列表小部件
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
@@ -206,26 +207,26 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
---    s.mywibox = awful.wibar({ position = "bottom", screen = s })
---
---    -- Add widgets to the wibox
---    s.mywibox:setup {
---        layout = wibox.layout.align.horizontal,
---        { -- Left widgets
---            layout = wibox.layout.fixed.horizontal,
---            mylauncher,
---            s.mytaglist,
---            s.mypromptbox,
---        },
---        s.mytasklist, -- Middle widget
---        { -- Right widgets
---            layout = wibox.layout.fixed.horizontal,
---            mykeyboardlayout,
---            wibox.widget.systray(),
---            mytextclock,
---            s.mylayoutbox,
---        },
---    }
+    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+
+    -- Add widgets to the wibox
+    s.mywibox:setup {
+        layout = wibox.layout.align.horizontal,
+        { -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            mylauncher,
+            s.mytaglist,
+            s.mypromptbox,
+        },
+        s.mytasklist, -- Middle widget
+        { -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            mykeyboardlayout,
+            wibox.widget.systray(),
+            mytextclock,
+            s.mylayoutbox,
+        },
+    }
 end)
 -- }}}
 
@@ -588,13 +589,13 @@ autorunApps =
 { 
 	"sxhkd",
 	"clash &",
-	"qv2ray",
+--	"qv2ray",
 	"xhost +",
 	"/usr/lib/gsd-xsettings",
 	"bash ~/.config/awesome/feh.sh &",
 	"xfce4-panel",
 	"fcitx",
-	"bash ~/.config/awesome/compton.sh &",
+	--"bash ~/.config/awesome/compton.sh &",
 	"killall plasmashell",
 	"flameshot",
 }
@@ -605,4 +606,21 @@ if autorun then
         awful.util.spawn_with_shell(autorunApps[app])
     end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
+---- 间隙
+-- beautiful.useless_gap = 0
+--maximized("~/Imager/7992.jpg",nil,true,0)
+
