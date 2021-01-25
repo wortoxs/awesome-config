@@ -3,5 +3,5 @@
 killall compton
 while :
 do
-	compton --benchmark 1000000
+	compton --benchmark 1000000 
 done

@@ -2,13 +2,13 @@
 
 ## Tips for bug reports
 
-* Was this issue already reported?  Please do a quick search.
+* 这个问题已经被报道了吗？请快速搜索。
 
-* Maybe the problem is solved in the current master branch already?
+* 也许问题已经在当前的master分支中解决了？
 
-  Simply clone awesome-ban with `git clone --recursive https://github.com/4ban/awesome-ban.git` or
+  只需克隆真棒禁令 `git clone --recursive https://github.com/4ban/awesome-ban.git` or
 
-  download the git version via https://github.com/4ban/awesome-ban/archive/master.zip
+  通过下载git版本 https://github.com/4ban/awesome-ban/archive/master.zip
 
   and run `mv -bv awesome-ban/* ~/.config/awesome; rm -rf awesome-ban` directly to find out.
 

@@ -591,10 +591,11 @@ autorunApps =
 { 
 	"sxhkd",
 	"clash &",
---	"qv2ray",
+	--"qv2ray",
 	"xhost +",
 	"/usr/lib/gsd-xsettings",
 	"bash ~/.config/awesome/feh.sh &",
+	"/mnt/home/todo-list/todolist &",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
@@ -610,19 +611,16 @@ if autorun then
     end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
 ---- 间隙
---beautiful.useless_gap = 5
+beautiful.useless_gap = 4
+-- 圆角
 
+client.connect_signal("manage", function (c)
+
+	c.shape = function(cr,w,h)
+
+		gears.shape.rounded_rect(cr,w,h,10)
+	end
+
+end)
