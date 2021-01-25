@@ -3,9 +3,18 @@ This is awesome install the shell
 You can `git clone https://github.com/denstiny/awesome-config.git`      
 配张图片，hhh       
 ![](https://i.bmp.ovh/imgs/2020/05/fce9611a63c196ee.png)
-我艹，装不下去了，词汇量就这么点    
-反正就拷贝一下
-然后    
+
+> ## 更新日志  <br>  
+* 2021 1-25  
+	* 不使用任何依赖添加窗口圆角
+	* 改变窗口习惯
+	* 改变窗口间隔
+	* 使用窗口背景模糊特效 <u><font size=1>克隆[compton](https://github.com/denstiny/compton)</font></u>
+	* 添加运行compton脚本，自动切换壁纸, 请在家目录创建一个Imager文件夹存储壁纸
+	> 壁纸演示
+	![image.png](https://i.loli.net/2021/01/25/rYTiw57KQscAzRV.png)
+
+反正就拷贝一下然后    
 ~~` cd awesome-config && bash .install.sh  `~~  
 脚本已经无法运行，可以根据脚本手动安装  
 他会给你自动配置你的awesome ，只能在manjaro底下用           
@@ -29,4 +38,3 @@ Comment it out in the script
 Well, the Chinese photo is very ugly, or youdao translation 
 
 ![awesome.jpg](https://ftp.bmp.ovh/imgs/2020/05/b4baa7ed0ca7ae54.png)
-# 更改compuon配置
