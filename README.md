@@ -12,7 +12,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 使用窗口背景模糊特效 <u><font size=1>克隆[compton](https://github.com/denstiny/compton)</font></u>
 	* 添加运行compton脚本，自动切换壁纸, 请在家目录创建一个Imager文件夹存储壁纸
 	> 壁纸演示
-	![image.png](https://i.loli.net/2021/01/25/rYTiw57KQscAzRV.png)
+	[![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
 反正就拷贝一下然后    
 ~~` cd awesome-config && bash .install.sh  `~~  
