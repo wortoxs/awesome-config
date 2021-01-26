@@ -483,6 +483,7 @@ awful.rules.rules = {
 		"Wine",
   	 	"SimpleScreenRecorder",
 		  "Mtodo",
+		  "Xfce4-appfinder",
 		  "mpv",
 		  "Steam",
           "Arandr",
@@ -586,16 +587,18 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- run_once("fcitx")
 --  自动启动
 os.execute"dex -a -e fcitx"
+
+-- 开启自动启动
 autorun = true
 autorunApps =  
 { 
-	"sxhkd",
-	"clash &",
+--	"sxhkd",
+--	"clash &",
 	--"qv2ray",
 	"xhost +",
 	"/usr/lib/gsd-xsettings",
-	"bash ~/.config/awesome/feh.sh &",
-	"/mnt/home/todo-list/todolist &",
+--	"/mnt/home/todo-list/todolist &",
+	"bash /home/aerocn/.config/awesome/feh.sh &",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
@@ -611,9 +614,11 @@ if autorun then
     end
 end
 
+
 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
----- 间隙
-beautiful.useless_gap = 4
+
+
+
 -- 窗口圆角
 
 client.connect_signal("manage", function (c)
@@ -624,3 +629,13 @@ client.connect_signal("manage", function (c)
 	end
 
 end)
+
+-- 窗口规则
+---- 内边框
+ beautiful.useless_gap = 4
+---- 外边框
+for s = 1, screen.count()
+do
+    awful.screen.padding(screen[1], { top = 10, left = 2, right = 2, bottom = 10 })
+end
+
