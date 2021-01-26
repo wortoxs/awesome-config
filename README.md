@@ -11,7 +11,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 使用`picom` 窗口渲染
 	* 添加 `picom` 配置文件 
 	* `src/install.sh` 自动安装脚本
-	安装方ear
+	安装方picom
 	```shell
 	 > yay -S picom-jonaburg-git
 	```
@@ -32,8 +32,10 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 sudo pacman -S awesome
 # ubuntu
 sudo apt install awesome
-# 安装配置
+# arch/manjaro 安装
 git clone https://github.com/denstiny/awesome-config.git 
 bash awesome-config/src/install.sh
+# 其他linux 请根据脚本手动安装
+git clone https://github.com/denstiny/awesome-config.git 
 ```
 ### I fucked. I can't keep it up. That's all I have
