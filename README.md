@@ -11,7 +11,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 使用`picom` 窗口渲染
 	* 添加 `picom` 配置文件
 	> 渲染演示
-	[![sjT1sI.gif](https://s3.ax1x.com/2021/01/26/sjT1sI.gif)](https://s3.ax1x.com/2021/01/26/sjT1sI.gif)
+	![sjT1sI.gif](https://s3.ax1x.com/2021/01/26/sjT1sI.gif)
 * 2021 1-25  
 	* 不使用任何依赖添加窗口圆角
 	* 改变窗口习惯
@@ -19,7 +19,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 使用窗口背景模糊特效 <u><font size=1>克隆[compton](https://github.com/denstiny/compton)</font></u>
 	* 添加运行compton脚本，自动切换壁纸, 请在家目录创建一个Imager文件夹存储壁纸
 	> 壁纸演示
-	[![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
+	![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
 ## 安装
 ```shell
