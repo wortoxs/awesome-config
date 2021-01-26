@@ -10,6 +10,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 取消使用 `compton` 
 	* 使用`picom` 窗口渲染
 	* 添加 `picom` 配置文件 
+	* `src/install.sh` 自动安装脚本
 	安装方ear
 	```shell
 	 > yay -S picom-jonaburg-git
@@ -22,7 +23,7 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	* 改变窗口间隔
 	* 使用窗口背景模糊特效 <u><font size=1>克隆[compton](https://github.com/denstiny/compton)</font></u>
 	* 添加运行compton脚本，自动切换壁纸, 请在家目录创建一个Imager文件夹存储壁纸
-	> 壁纸演示
+	> 演示
 	![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
 ## 安装
@@ -32,30 +33,7 @@ sudo pacman -S awesome
 # ubuntu
 sudo apt install awesome
 # 安装配置
-git clone https://github.com/denstiny/awesome-config.git ~/.config/awesome
+git clone https://github.com/denstiny/awesome-config.git 
+bash awesome-config/src/install.sh
 ```
-~~` cd awesome-config && bash .install.sh  `~~  
-
-~~`
-脚本已经无法运行，可以根据脚本手动安装  
-`~~ 
-他会给你自动配置你的awesome ，只能在manjaro底下用           
-另外我还写了一些其他的配置在里面。不喜欢的话可以  
-在脚本里面注释掉
-好吧，中文写真的好丑，还是有道翻译一下吧
-I fucked. I can't keep it up. That's all I have
-
-Just copy it anyway
-
-then
-
-
-`cd awesome-config && bash .install.sh `  
-It will auto-configure your awesome for you, and the configuration has no dependencies, so any
-
-The system all works, in addition I also wrote some other configuration in it do not like, can
-
-Comment it out in the script
-
-Well, the Chinese photo is very ugly, or youdao translation 
-
+### I fucked. I can't keep it up. That's all I have

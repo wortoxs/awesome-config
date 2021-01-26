@@ -4,6 +4,6 @@ sleep 1
 while true
 do
 	feh --randomize --bg-fill ~/Imager/
-	sleep 1000
+	sleep 60
 done
 #随机壁纸脚本
