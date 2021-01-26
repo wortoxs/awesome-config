@@ -5,6 +5,13 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 ![](https://i.bmp.ovh/imgs/2020/05/fce9611a63c196ee.png)
 
 > ## 更新日志  <br>  
+* 2021 1-26
+	* 删除仓库垃圾文件
+	* 取消使用 `compton` 
+	* 使用`picom` 窗口渲染
+	* 添加 `picom` 配置文件
+	> 渲染演示
+	[![sjT1sI.gif](https://s3.ax1x.com/2021/01/26/sjT1sI.gif)](https://s3.ax1x.com/2021/01/26/sjT1sI.gif)
 * 2021 1-25  
 	* 不使用任何依赖添加窗口圆角
 	* 改变窗口习惯

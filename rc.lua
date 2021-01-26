@@ -592,13 +592,14 @@ os.execute"dex -a -e fcitx"
 autorun = true
 autorunApps =  
 { 
---	"sxhkd",
+	"sxhkd",
 --	"clash &",
 	--"qv2ray",
-	"xhost +",
-	"/usr/lib/gsd-xsettings",
 --	"/mnt/home/todo-list/todolist &",
-	"bash /home/aerocn/.config/awesome/feh.sh &",
+	"picom &",
+	"xhost +",
+	"/usr/lib/gsd-xsettings &",
+	"bash /home/aercn/.config/awesome/feh.sh &",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
@@ -621,14 +622,14 @@ end
 
 -- 窗口圆角
 
-client.connect_signal("manage", function (c)
-
-	c.shape = function(cr,w,h)
-
-		gears.shape.rounded_rect(cr,w,h,10)
-	end
-
-end)
+--client.connect_signal("manage", function (c)
+--
+--	c.shape = function(cr,w,h)
+--
+--		gears.shape.rounded_rect(cr,w,h,10)
+--	end
+--
+--end)
 
 -- 窗口规则
 ---- 内边框
