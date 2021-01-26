@@ -14,9 +14,20 @@ You can `git clone https://github.com/denstiny/awesome-config.git`
 	> 壁纸演示
 	[![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
-反正就拷贝一下然后    
+## 安装
+```shell
+# arch 
+sudo pacman -S awesome
+# ubuntu
+sudo apt install awesome
+# 安装配置
+git clone https://github.com/denstiny/awesome-config.git ~/.config/awesome
+```
 ~~` cd awesome-config && bash .install.sh  `~~  
+
+~~`
 脚本已经无法运行，可以根据脚本手动安装  
+`~~ 
 他会给你自动配置你的awesome ，只能在manjaro底下用           
 另外我还写了一些其他的配置在里面。不喜欢的话可以  
 在脚本里面注释掉
@@ -37,4 +48,3 @@ Comment it out in the script
 
 Well, the Chinese photo is very ugly, or youdao translation 
 
-![awesome.jpg](https://ftp.bmp.ovh/imgs/2020/05/b4baa7ed0ca7ae54.png)

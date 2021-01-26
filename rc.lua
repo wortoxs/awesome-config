@@ -201,33 +201,33 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- 创建任务列表小部件
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+   -- s.mytasklist = awful.widget.tasklist {
+   --     screen  = s,
+   --     filter  = awful.widget.tasklist.filter.currenttags,
+   --     buttons = tasklist_buttons
+   -- }
 
-   -- 创建wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+   ---- 创建wibox
+   -- s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
-   -- 将小部件添加到wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+   ---- 将小部件添加到wibox
+   -- s.mywibox:setup {
+   --     layout = wibox.layout.align.horizontal,
+   --     { -- Left widgets
+   --         layout = wibox.layout.fixed.horizontal,
+   --         mylauncher,
+   --         s.mytaglist,
+   --         s.mypromptbox,
+   --     },
+   --     s.mytasklist, -- Middle widget
+   --     { -- Right widgets
+   --         layout = wibox.layout.fixed.horizontal,
+   --         mykeyboardlayout,
+   --         wibox.widget.systray(),
+   --         mytextclock,
+   --         s.mylayoutbox,
+   --     },
+   -- }
 end)
 -- }}}
 
