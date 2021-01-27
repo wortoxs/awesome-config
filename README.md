@@ -2,7 +2,7 @@
 This is awesome install the shell       
 You can `git clone https://github.com/denstiny/awesome-config.git`      
 配张图片，hhh       
-![](https://i.bmp.ovh/imgs/2020/05/fce9611a63c196ee.png)
+![image.png](https://i.loli.net/2021/01/27/QU7fliy6MTdtWIm.png)
 
 > ## 更新日志  <br>  
 * 2021 1-26
