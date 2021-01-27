@@ -38,4 +38,8 @@ bash awesome-config/src/install.sh
 # 其他linux 请根据脚本手动安装
 git clone https://github.com/denstiny/awesome-config.git 
 ```
+## 演示视频
+ <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
+  </a>
+
 ### I fucked. I can't keep it up. That's all I have

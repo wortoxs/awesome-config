@@ -483,8 +483,8 @@ awful.rules.rules = {
 		"Wine",
   	 	"SimpleScreenRecorder",
 		  "Mtodo",
-		  "Xfce4-appfinder",
 		  "mpv",
+		  "Xfce4-appfinder",
 		  "Steam",
           "Arandr",
           "Blueman-manager",
@@ -600,6 +600,7 @@ autorunApps =
 	"xhost +",
 	"/usr/lib/gsd-xsettings &",
 	"bash /home/aercn/.config/awesome/feh.sh &",
+	"krunner",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
@@ -622,14 +623,14 @@ end
 
 -- 窗口圆角
 
---client.connect_signal("manage", function (c)
---
---	c.shape = function(cr,w,h)
---
---		gears.shape.rounded_rect(cr,w,h,10)
---	end
---
---end)
+client.connect_signal("manage", function (c)
+
+	c.shape = function(cr,w,h)
+
+		gears.shape.rounded_rect(cr,w,h,10)
+	end
+
+end)
 
 -- 窗口规则
 ---- 内边框
