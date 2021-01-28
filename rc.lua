@@ -641,3 +641,4 @@ do
     awful.screen.padding(screen[1], { top = 10, left = 2, right = 2, bottom = 10 })
 end
 
+io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny &\"")
