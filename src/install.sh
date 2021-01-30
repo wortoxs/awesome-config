@@ -41,6 +41,6 @@ else
 	mv ~/.config/awesome/sxhkd ~/.config/
 fi
 echo "克隆浮动窗口管理工具"
-git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
 echo "感谢支持"
