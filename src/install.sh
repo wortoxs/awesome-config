@@ -1,7 +1,10 @@
 #bin/shell
 ls /bin/ | grep yay &> /dev/null
-if [$? == 1 ]
+if [ $? == 1 ]
+then
+	echo "isntall yay"
 	sudo pacman -S yay
+fi
 ls /bin/ | grep yay &> /dev/null
 if [ $? == 0 ];
 then
@@ -12,8 +15,8 @@ ls ~/.config/ | grep awesome &> /dev/null
 if [ $? == 0 ];
 then 
 	echo "mkdir awesome file "
-	mv ~/.config/awesome ~/.config/awesome.mk
-	mv ./awesome-config ~/.config/awesome
+   mv ~/.config/awesome ~/.config/awesome.mk
+   mv ./awesome-config ~/.config/awesome
 else
 	echo "mkdir awesome file 1"
 	mv ./awesome-config ~/.config/awesome
