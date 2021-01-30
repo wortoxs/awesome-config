@@ -16,10 +16,10 @@ if [ $? == 0 ];
 then 
 	echo "mkdir awesome file "
    mv ~/.config/awesome ~/.config/awesome.mk
-   mv ./awesome-config ~/.config/awesome
+   mv ../awesome-config ~/.config/awesome
 else
 	echo "mkdir awesome file 1"
-	mv ./awesome-config ~/.config/awesome
+	mv ../awesome-config ~/.config/awesome
 fi
 ls ~/.config/ | grep picom.conf &> /dev/null
 if [ $? == 0 ];
