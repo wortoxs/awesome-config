@@ -13,6 +13,6 @@ do
 		exit;
 	fi
 	feh --randomize --bg-fill ~/Imager/
-	sleep 60
+	sleep 180
 done
 #随机壁纸脚本

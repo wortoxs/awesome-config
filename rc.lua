@@ -6,7 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
-require("collision")()  
+require("collision")()
 -- 小部件和布局库
 local wibox = require("wibox")
 -- 主题处理库
@@ -483,6 +483,7 @@ awful.rules.rules = {
 		"Wine",
   	 	"SimpleScreenRecorder",
 		  "Mtodo",
+		  "feh",
 		  "mpv",
 		  "Xfce4-appfinder",
 		  "Steam",
@@ -600,7 +601,7 @@ autorunApps =
 	"xhost +",
 	"/usr/lib/gsd-xsettings &",
 	"bash /home/aercn/.config/awesome/feh.sh &",
-	"krunner",
+	--"krunner",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
@@ -638,7 +639,7 @@ end)
 ---- 外边框
 for s = 1, screen.count()
 do
-    awful.screen.padding(screen[1], { top = 10, left = 2, right = 2, bottom = 10 })
+    awful.screen.padding(screen[s], { top = 20, left = 2, right = 2, bottom = 20 })
 end
 
-io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny &\"")
+-- io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny \"")

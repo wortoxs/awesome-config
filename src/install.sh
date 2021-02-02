@@ -44,3 +44,5 @@ echo "克隆浮动窗口管理工具"
 cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
 echo "感谢支持"
+notify-send -i ~/.config/awesome/src/s.jpg -t 0 如果你很喜欢 是否可以请我
+喝一杯奶茶
