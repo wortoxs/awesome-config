@@ -21,16 +21,16 @@ else
 	echo "mkdir awesome file 1"
 	mv ../awesome-config ~/.config/awesome
 fi
-ls ~/.config/ | grep picom.conf &> /dev/null
-if [ $? == 0 ];
-then 
-	echo "picom config"
-	mv ~/.config/picom.conf ~/.config/picom.conf.mk
-	mv ~/.config/awesome/src/picom.conf ~/.config/picom.conf
-else
-	echo "picom config"
-	mv ~/.config/awesome/src/picom.conf ~/.config/picom.conf
-fi
+#ls ~/.config/ | grep picom.conf &> /dev/null
+#if [ $? == 0 ];
+#then 
+#	echo "picom config"
+#	mv ~/.config/picom.conf ~/.config/picom.conf.mk
+#	mv ~/.config/awesome/src/picom.conf ~/.config/picom.conf
+#else
+#	echo "picom config"
+#	mv ~/.config/awesome/src/picom.conf ~/.config/picom.conf
+#fi
 ls ~/.config/ grep sxhkd &> /dev/null
 if [ $? == 0 ];
 then

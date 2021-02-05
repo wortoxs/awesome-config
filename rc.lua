@@ -63,13 +63,13 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.magnifier,
-    awful.layout.suit.floating,
+    --awful.layout.suit.magnifier,
+    --awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
+   -- awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.top,
+    --awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
@@ -177,9 +177,9 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
  --awful.tag({ "A", "W", "E", "S", "O", "M", "E", "W", "M" }, s, awful.layout.layouts[1])
-    local names = { "One:Code", "Tow:Web ", "Three", "Four", "Five", "Six", "Seven", "Eight:Music", "Nine:QQ" ,"temp" }
+    local names = { "Web", "Code","Music", "Comm" ,"VBox" ,"Play","Science"}
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.tile, l.tile, l.tile, l.fair, l.max,
+    local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile,
 --local layouts = l.max,
    l.tile, l.tile.left, l.tile, l.tile }
     awful.tag(names, s, layouts)
@@ -480,24 +480,24 @@ awful.rules.rules = {
           "pinentry",
         },
         class = { --窗口class ,可以使用xrop获取
-		"Wine",
-  	 	"SimpleScreenRecorder",
-		  "Mtodo",
-		  "feh",
-		  "mpv",
-		  "Xfce4-appfinder",
-		  "Steam",
-          "Arandr",
-          "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          --"Google-chrome",
-          "xtightvncviewer"},
+		 "Wine",
+		 "SimpleScreenRecorder",
+		 "Mtodo",
+		 "feh",
+		 "mpv",
+		 "Xfce4-appfinder",
+		 "Steam",
+		 "Arandr",
+		 "Blueman-manager",
+		 "Gpick",
+		 "Kruler",
+		 "MessageWin",  -- kalarm.
+		 "Sxiv",
+		 "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+		 "Wpa_gui",
+		 "veromix",
+		 --"Google-chrome",
+		 "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -597,8 +597,9 @@ autorunApps =
 --	"clash &",
 	--"qv2ray",
 --	"/mnt/home/todo-list/todolist &",
-	"picom &",
+	"picom --config ~/.config/awesome/src/picom.conf &",
 	"xhost +",
+	"fcitx5",
 	"/usr/lib/gsd-xsettings &",
 	"bash /home/aercn/.config/awesome/feh.sh &",
 	--"krunner",
@@ -639,7 +640,7 @@ end)
 ---- 外边框
 for s = 1, screen.count()
 do
-    awful.screen.padding(screen[s], { top = 20, left = 2, right = 2, bottom = 20 })
+    awful.screen.padding(screen[s], { top = 10, left = 2, right = 2, bottom = 20 })
 end
 
 -- io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny \"")
