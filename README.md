@@ -4,8 +4,8 @@
 * [Hi! world!](#hi-world)
 * [arch/manjaro 安装](#archmanjaro-安装)
 * [其他linux 请根据脚本手动安装](#其他linux-请根据脚本手动安装)
+	* [按键](#按键)
 	* [演示视频](#演示视频)
-		* [按键](#按键)
 
 <!-- vim-markdown-toc -->
 # Hi! world!
@@ -44,11 +44,7 @@ git clone https://github.com/denstiny/awesome-config.git ~/
 bash awesome-config/src/install.sh
 ```
 # 其他linux 请根据脚本手动安装
-## 演示视频
- <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
-  </a>
-
-### 按键
+## 按键
 
 <details>
 <summary>按键</summary>
@@ -85,3 +81,7 @@ bash awesome-config/src/install.sh
 
 
 </details>
+## 演示视频
+ <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
+  </a>
+
