@@ -1,8 +1,18 @@
+
+<!-- vim-markdown-toc GFM -->
+
+* [Hi! world!](#hi-world)
+* [arch/manjaro 安装](#archmanjaro-安装)
+* [其他linux 请根据脚本手动安装](#其他linux-请根据脚本手动安装)
+	* [演示视频](#演示视频)
+		* [I fucked. I can't keep it up. That's all I have](#i-fucked-i-cant-keep-it-up-thats-all-i-have)
+
+<!-- vim-markdown-toc -->
 # Hi! world!
 ![20210202182438](https://i.loli.net/2021/02/02/xhn2mbcwyZLsp9N.png)  
 This is awesome install the shell       
 You can 
-`git clone https://github.com/denstiny/awesome-config.git`      
+`git clone https://github.com/denstiny/awesome-config.git ~/`      
 配张图片，hhh       
 ![image.png](https://i.loli.net/2021/01/27/QU7fliy6MTdtWIm.png)
 
@@ -28,18 +38,12 @@ You can
 	> 演示
 	![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
-## 安装
-```shell
-# arch 
-sudo pacman -S awesome
-# ubuntu
-sudo apt install awesome
 # arch/manjaro 安装
-git clone https://github.com/denstiny/awesome-config.git 
-bash awesome-config/src/install.sh
-# 其他linux 请根据脚本手动安装
-git clone https://github.com/denstiny/awesome-config.git 
 ```
+git clone https://github.com/denstiny/awesome-config.git ~/
+bash awesome-config/src/install.sh
+```
+# 其他linux 请根据脚本手动安装
 ## 演示视频
  <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
   </a>
