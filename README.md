@@ -7,6 +7,7 @@
 * [其他linux 请根据脚本手动安装](#其他linux-请根据脚本手动安装)
 	* [按键](#按键)
 	* [演示视频](#演示视频)
+	* [问题](#问题)
 
 <!-- vim-markdown-toc -->
 # Hi! world!
@@ -94,6 +95,54 @@ bash awesome-config/src/install.sh
 <summary>点击查看</summary>
  <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
   </a>
+
+</details>
+
+## 问题
+
+<details>
+<summary>点击查看</summary>
+
+<font size=2><b>1. picom安装失败，检查是否拥有下面的相关依赖，然后运行下面的命令</b></font>  
+<details>
+<summary>点击查看</summary>
+> <font size=3><b>依赖</b></font>  
+
+假设 你 已经 有 所有 的 通常 构建 工具 安装 (e.g. gcc, python, meson, ninja, etc.), 你 仍然 需要:
+- libx11  
+- libx11-xcb  
+- libXext  
+- xproto  
+- xcb  
+- xcb-damage  
+- xcb-xfixes  
+- xcb-shape  
+- xcb-renderutil  
+- xcb-render  
+- xcb-randr  
+- xcb-composite  
+- xcb-image  
+- xcb-present  
+- xcb-xinerama 
+- xcb-glx  
+- pixman  
+- libdbus (optional, disable with the -Ddbus=false meson configure flag)  
+- libconfig (optional, disable with the -Dconfig_file=false meson configure flag)  
+- libGL (optional, disable with the -Dopengl=false meson configure flag)  
+- libpcre (optional, disable with the -Dregex=false meson configure flag)  
+- libev  
+- uthash  
+
+```sh
+yay -S picom-jonaburg-git
+```
+
+</details>
+<font size=1><b>2. 无法使用qv2ray等翻墙工具,是的这是所有的窗口管理器的通病，但这不是bug，窗口管理器无法像桌面管理器一样拥有集成环境，他只是帮助你管理窗口,当然你可以在kde里面使用awesome窗口管理器以解决这个问题</b></font>    
+<br>
+<font size=1><b>3. 为什么我无法打开终端,oh，这不能怪我，因为我使用的是st终端，所以 `rc.lua` 默认设置为st终端,如果你是运行的脚本安装aweosme配置，你可以使用 win+o 启动 alacritty终端，然后修改 ~/.config/awesome/rc.lua 文件中的 terminal 参数  </b></font>  
+<br>
+<font size=1><b>4. 为什么我运行了脚本安装,会多了alacritty终端等一些其他用不上的程序 ,因为这个是我自己用的脚本，我希望他能帮我自动完成安装我所需要的程序</b></font>  
 
 </details>
 
