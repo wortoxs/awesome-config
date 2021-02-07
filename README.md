@@ -2,7 +2,8 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Hi! world!](#hi-world)
-* [arch/manjaro 安装](#archmanjaro-安装)
+	* [更新日志  <br>](#更新日志--br)
+* [arch/manjaro安装](#archmanjaro安装)
 * [其他linux 请根据脚本手动安装](#其他linux-请根据脚本手动安装)
 	* [按键](#按键)
 	* [演示视频](#演示视频)
@@ -16,7 +17,10 @@ You can
 配张图片，hhh       
 ![image.png](https://i.loli.net/2021/01/27/QU7fliy6MTdtWIm.png)
 
-> ## 更新日志  <br>  
+## 更新日志  <br>  
+<details>
+<summary>点击查看</summary>
+
 * 2021 1-26
 	* 删除仓库垃圾文件
 	* 取消使用 `compton` 
@@ -38,7 +42,9 @@ You can
 	> 演示
 	![sOMicQ.png](https://s3.ax1x.com/2021/01/25/sOMicQ.png)
 
-# arch/manjaro 安装
+</details>
+
+# arch/manjaro安装
 ```
 git clone https://github.com/denstiny/awesome-config.git ~/
 bash awesome-config/src/install.sh
@@ -47,7 +53,7 @@ bash awesome-config/src/install.sh
 ## 按键
 
 <details>
-<summary>按键</summary>
+<summary>点击查看</summary>
 
 |键位|效果|注释|
 |:-|:-:|:-:|
@@ -78,10 +84,16 @@ bash awesome-config/src/install.sh
 | `mod Ctrl n`| 显示隐藏的窗口
 | `mod Shift span`| 切换布局
 | `mod Shift e`| 退出awesome
-
+| `mod m`| 最大化显示屏幕
 
 </details>
+
 ## 演示视频
+<details>
+
+<summary>点击查看</summary>
  <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
   </a>
+
+</details>
 
