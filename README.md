@@ -5,7 +5,7 @@
 * [arch/manjaro 安装](#archmanjaro-安装)
 * [其他linux 请根据脚本手动安装](#其他linux-请根据脚本手动安装)
 	* [演示视频](#演示视频)
-		* [I fucked. I can't keep it up. That's all I have](#i-fucked-i-cant-keep-it-up-thats-all-i-have)
+		* [按键](#按键)
 
 <!-- vim-markdown-toc -->
 # Hi! world!
@@ -48,4 +48,35 @@ bash awesome-config/src/install.sh
  <a href="https://www.bilibili.com/video/BV1Xy4y1H7oG?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1611724661&unique_k=pnrOc9">  <span>  <img border="0" src="./src/a.png" height="500" width="100%"/>
   </a>
 
-### I fucked. I can't keep it up. That's all I have
+### 按键
+
+<details>
+<summary>按键</summary>
+
+|键位|效果|注释|
+|:-|:-:|:-:|
+|`mod f`|全屏|
+|`mod a`|向左放大窗口
+|`mod d`| 向右放大窗口
+|`mod l`| 锁屏幕
+| `mod enter`|新建终端
+| `mod Shift q`| 杀死当前窗口|在rc.lua文件中找到`terminal`更改默认终端
+| `mod Shift r`| 重启awesome
+| `mod span` | 切换当前窗口浮动| 再次按会切换平铺状态
+| `mod Shift [1...9]`|将当前窗口移动到其他工作区
+| `mod tab`| 快速切换窗口
+| `mod j`|切换上一个窗口
+| `mod k`| 切换下一个窗口
+| `mod J`|和上一个窗口交换位置
+| `mod K`|和下一个窗口交换位置
+| `mod Shift →↑↓←`|移动浮动窗口
+| `mod Alt →↑↓←`|放大浮动窗口
+| `mod Shift Alt →↑↓←`|缩小浮动窗口
+| `mod w`| 打开菜单
+| `mod s`| 显示键位
+| `mod o`| 打开文件或者运行bash命令
+| `mod r`|运行bash命令|已经删除
+| `mod n`| 隐藏当前窗口
+| `mod Ctrl n`| 显示隐藏的窗口
+
+</details>
