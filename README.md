@@ -84,7 +84,7 @@ bash awesome-config/src/install.sh
 | `mod Ctrl n`| 显示隐藏的窗口
 | `mod Shift span`| 切换布局
 | `mod Shift e`| 退出awesome
-| `mod m`| 最大化显示屏幕
+| `mod m`| 最大化显示窗口
 
 </details>
 
