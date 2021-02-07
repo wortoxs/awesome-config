@@ -63,7 +63,9 @@ bash awesome-config/src/install.sh
 | `mod Shift q`| 杀死当前窗口|在rc.lua文件中找到`terminal`更改默认终端
 | `mod Shift r`| 重启awesome
 | `mod span` | 切换当前窗口浮动| 再次按会切换平铺状态
+| `mod t`|将浮动窗口设置最上层
 | `mod Shift [1...9]`|将当前窗口移动到其他工作区
+| `mod [1...9]`| 切换工作区
 | `mod tab`| 快速切换窗口
 | `mod j`|切换上一个窗口
 | `mod k`| 切换下一个窗口
@@ -78,5 +80,8 @@ bash awesome-config/src/install.sh
 | `mod r`|运行bash命令|已经删除
 | `mod n`| 隐藏当前窗口
 | `mod Ctrl n`| 显示隐藏的窗口
+| `mod Shift span`| 切换布局
+| `mod Shift e`| 退出awesome
+
 
 </details>
