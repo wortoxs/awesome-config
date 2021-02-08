@@ -23,26 +23,33 @@ if [ $? == 0 ];
 then 
 	echo "mkdir awesome file "
    mv ~/.config/awesome ~/.config/awesome.mk
-   mv ~/awesome-config ~/.config/awesome
+   \cp -rvf ~/awesome-config ~/.config/awesome
 else
 	echo "mkdir awesome file 1"
-	mv ~/awesome-config ~/.config/awesome
+	\cp -rvf ~/awesome-config ~/.config/awesome
 fi
 ls ~/.config/ grep sxhkd &> /dev/null
 if [ $? == 0 ];
 then
 	echo "config sxhkd"
 	mv ~/.config/sxhkd ~/.config/sxhkd.mk
-	mv ~/.config/awesome/sxhkd ~/.config/
+	\cp -rvf ~/.config/awesome/sxhkd ~/.config/
 else
-	mv ~/.config/awesome/sxhkd ~/.config/
+	\cp -rvf ~/.config/awesome/sxhkd ~/.config/
 fi
 echo "克隆浮动窗口管理工具"
-cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+ls ~/.config/awesome | grep collision &> /dev/null
+if [ $? == 0 ];then
+	 mv ~/.config/awesome/collision ~/.config/awesome/collision.mk
+	 cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+else
+	 cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+fi
+
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
 echo "感谢支持"
 notify-send -i ~/.config/awesome/src/s.jpg -t 0 如果你很喜欢 是否可以请我喝一杯奶茶
-if [ $? = 0 ];
+if [ $? == 0 ];
 then 
 	 echo "抱歉安装失败，你可以向我反馈问题"
 fi
