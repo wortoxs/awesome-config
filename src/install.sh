@@ -41,9 +41,9 @@ echo "克隆浮动窗口管理工具"
 ls ~/.config/awesome | grep collision &> /dev/null
 if [ $? == 0 ];then
 	 mv ~/.config/awesome/collision ~/.config/awesome/collision.mk
-	 cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+	 cd $HOME && git clone https://github.com/Elv13/collision.git ~/.config/awesome/collision
 else
-	 cd $HOME && git clone https://hub.fastgit.org/Elv13/collision.git ~/.config/awesome/collision
+	 cd $HOME && git clone https://github.com/Elv13/collision.git ~/.config/awesome/collision
 fi
 
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
