@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -22,13 +29,18 @@ alias swapkey="setxkbmap -option caps:swapescape"
 
 
 
+# fzf
+export FZF_DEFAULT_OPTS="--height 70% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+
+
+
 export EDITOR=nvim  # 更改默认的编辑器
-#export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 export WINEARCH=win32
 
 # 工作目录
 pdf="/mnt/home/PDF"
-work="/mnt/home/CocRes"
+work="/mnt/home/code"
 notes="/mnt/home/notes"
 
 
@@ -37,6 +49,15 @@ notes="/mnt/home/notes"
 #ffmpeg -i [video] -f image2 output_%d.jpg
 #source ~/.config/awesome/fzf.sh
 alias fnvim="nvim \$(fzf --height 40%)"
-PROMPT='%{$fg[green]%} > '
-RPS1='%{$fg[yellow]%}%~'
-clear
+
+
+
+
+printf '\n%.0s' {1..$LINES}
+#echo -e "\033[2J \033[0m"
+printf '\033[5 q\r'
+alias clear="printf '\n%.0s' {1..$LINES}"
+
+
+PROMPT='%{$fg[green]%}  > '
+#RPS1='%{$fg[yellow]%}%~'
