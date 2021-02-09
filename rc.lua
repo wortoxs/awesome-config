@@ -595,13 +595,13 @@ autorun = true
 autorunApps =  
 { 
 	"sxhkd",
---	"clash &",
-	--"qv2ray",
---	"/mnt/home/todo-list/todolist &",
+  --"clash &",
+  "/mnt/home/todo-list/todolist &",
 	"picom --config ~/.config/awesome/src/picom.conf &",
 	"xhost +",
 	"fcitx5",
 	"/usr/lib/gsd-xsettings &",
+	--"qv2ray",
 	"bash /home/aercn/.config/awesome/feh.sh &",
 	--"krunner",
 	"xfce4-panel",
@@ -637,7 +637,7 @@ end)
 
 -- 窗口规则
 ---- 内边框
- beautiful.useless_gap = 2
+ beautiful.useless_gap = 4
 ---- 外边框
 for s = 1, screen.count()
 do

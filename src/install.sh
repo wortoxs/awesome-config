@@ -49,7 +49,7 @@ fi
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
 echo "感谢支持"
 notify-send -i ~/.config/awesome/src/s.jpg -t 0 如果你很喜欢 是否可以请我喝一杯奶茶
-if [ $? == 0 ];
+if [ $? == 1 ];
 then 
 	 echo "抱歉安装失败，你可以向我反馈问题"
 fi

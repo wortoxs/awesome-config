@@ -14,7 +14,7 @@
 ![20210202182438](https://i.loli.net/2021/02/02/xhn2mbcwyZLsp9N.png)  
 This is awesome install the shell       
 You can 
-`git clone https://github.com/denstiny/awesome-config.git ~/`      
+`git clone https://github.com/denstiny/awesome-config.git ~/awesome-config`      
 配张图片，hhh       
 ![image.png](https://i.loli.net/2021/01/27/QU7fliy6MTdtWIm.png)
 
