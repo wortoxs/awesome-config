@@ -47,7 +47,7 @@ You can
 
 # arch/manjaro安装
 ```
-git clone https://github.com/denstiny/awesome-config.git ~/
+git clone https://github.com/denstiny/awesome-config.git 
 bash awesome-config/src/install.sh
 ```
 # 其他linux 请根据脚本手动安装
@@ -62,8 +62,8 @@ bash awesome-config/src/install.sh
 |`mod a`|向左放大窗口
 |`mod d`| 向右放大窗口
 |`mod l`| 锁屏幕
-| `mod enter`|新建终端
-| `mod Shift q`| 杀死当前窗口|在rc.lua文件中找到`terminal`更改默认终端
+| `mod enter`|新建终端|在rc.lua文件中找到`terminal`更改默认终端
+| `mod Shift q`| 杀死当前窗口
 | `mod Shift r`| 重启awesome
 | `mod span` | 切换当前窗口浮动| 再次按会切换平铺状态
 | `mod t`|将浮动窗口设置最上层
