@@ -35,12 +35,12 @@ export FZF_DEFAULT_OPTS="--height 70% --layout=reverse --preview '(highlight -O 
 
 
 export EDITOR=nvim  # 更改默认的编辑器
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
 export WINEARCH=win32
 
 # 工作目录
 pdf="/mnt/home/PDF"
-work="/mnt/home/code"
+code="/mnt/home/code"
 notes="/mnt/home/notes"
 
 
@@ -52,11 +52,12 @@ alias fnvim="nvim \$(fzf --height 40%)"
 
 
 
-
+\clear
 printf '\n%.0s' {1..$LINES}
 #echo -e "\033[2J \033[0m"
-printf '\033[5 q\r'
-alias clear="printf '\n%.0s' {1..$LINES}"
+#printf '\033[5 q\r'
+#alias clear="printf '\n%.0s' {1..$LINES}"
+alias clear="printf '\n%.0s' {1..50}"
 
 
 PROMPT='%{$fg[green]%}  > '

@@ -9,7 +9,8 @@ ls /bin/ | grep yay &> /dev/null
 if [ $? == 0 ];
 then
 	echo "yay install"
-	yay -S xfce4-panel picom-jonaburg-git feh awesome sxhkd alacritty
+	yay -S xfce4-panel picom-jonaburg-git feh awesome sxhkd alacritty libconfig
+	sudo locale-gen
 else
 	 yay 安装失败，请手动安装yay后重新启动脚本
 	 exit

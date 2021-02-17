@@ -68,14 +68,14 @@ awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
    -- awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
+    awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
+	  awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
+    -- awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.corner.nw,
+    awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -399,7 +399,6 @@ for i = 0, 9 do
                            tag:view_only()
                         end
 				 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &") 
-				--io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
@@ -602,22 +601,17 @@ autorunApps =
 	"fcitx5",
 	"/usr/lib/gsd-xsettings &",
 	--"qv2ray",
-	"bash /home/aercn/.config/awesome/feh.sh &",
 	--"krunner",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
 	"killall plasmashell",
 	"flameshot",
+--	"bash ~/.config/awesome/feh.sh &",
 }
 
 
 
-if autorun then
-    for app = 1, #autorunApps do
-        awful.util.spawn_with_shell(autorunApps[app])
-    end
-end
 
 
 --io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
@@ -645,3 +639,11 @@ do
 end
 
 -- io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny \"")
+--
+if autorun then
+    for app = 1, #autorunApps do
+        awful.util.spawn_with_shell(autorunApps[app])
+    end
+end
+
+io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
