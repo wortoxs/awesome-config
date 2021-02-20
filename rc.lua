@@ -46,9 +46,7 @@ end
 
 -- {{{ Variable definitions
 -- 主题定义颜色，图标，字体和壁纸。
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- 主题
-
--- 以后将其用作要运行的默认终端和编辑器。
+beautiful.init(gears.filesystem.get_themes_dir() .. "fhuizing/theme.lua") -- 主题
 -- terminal = "xterm"
 terminal = "st"
 editor = os.getenv("EDITOR") or "nvim" -- 设置默认编辑器
@@ -201,33 +199,34 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- 创建任务列表小部件
-   -- s.mytasklist = awful.widget.tasklist {
-   --     screen  = s,
-   --     filter  = awful.widget.tasklist.filter.currenttags,
-   --     buttons = tasklist_buttons
-   -- }
+    s.mytasklist = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.currenttags,
+        buttons = tasklist_buttons
+    }
 
-   ---- 创建wibox
-   -- s.mywibox = awful.wibar({ position = "bottom", screen = s })
+   -- 创建wibox
+    s.mywibox = awful.wibar({ position = "bottom", screen = s})
 
-   ---- 将小部件添加到wibox
-   -- s.mywibox:setup {
-   --     layout = wibox.layout.align.horizontal,
-   --     { -- Left widgets
-   --         layout = wibox.layout.fixed.horizontal,
-   --         mylauncher,
-   --         s.mytaglist,
-   --         s.mypromptbox,
-   --     },
-   --     s.mytasklist, -- Middle widget
-   --     { -- Right widgets
-   --         layout = wibox.layout.fixed.horizontal,
-   --         mykeyboardlayout,
-   --         wibox.widget.systray(),
-   --         mytextclock,
-   --         s.mylayoutbox,
-   --     },
-   -- }
+
+   -- 将小部件添加到wibox
+    s.mywibox:setup {
+        layout = wibox.layout.align.horizontal,
+        { -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            mylauncher,
+            s.mytaglist,
+            s.mypromptbox,
+        },
+        s.mytasklist, -- Middle widget
+        { -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            mykeyboardlayout,
+            wibox.widget.systray(),
+            mytextclock,
+            s.mylayoutbox,
+        },
+    }
 end)
 -- }}}
 
@@ -595,17 +594,17 @@ autorunApps =
 { 
 	"sxhkd",
   --"clash &",
-  "/mnt/home/todo-list/todolist &",
+  --"/mnt/home/todo-list/todolist &",
 	"picom --config ~/.config/awesome/src/picom.conf &",
 	"xhost +",
 	"fcitx5",
 	"/usr/lib/gsd-xsettings &",
 	--"qv2ray",
-	--"krunner",
+	"krunner -b",
 	"xfce4-panel",
 	"fcitx",
 --	"bash ~/.config/awesome/compton.sh &",
-	"killall plasmashell",
+	--"killall plasmashell",
 	"flameshot",
 --	"bash ~/.config/awesome/feh.sh &",
 }
@@ -635,7 +634,7 @@ end)
 ---- 外边框
 for s = 1, screen.count()
 do
-    awful.screen.padding(screen[s], { top = 10, left = 2, right = 2, bottom = 20 })
+    awful.screen.padding(screen[s], { top = 10, left = 3, right = 3, bottom = 10 })
 end
 
 -- io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny \"")
@@ -646,4 +645,4 @@ if autorun then
     end
 end
 
-io.popen("feh --randomize --bg-fill ~/Imager") --在这里添加了一个每次切换工作区自动切换壁纸
+io.popen("bash ~/.config/awesome/feh.sh &") --在这里添加了一个每次切换工作区自动切换壁纸
