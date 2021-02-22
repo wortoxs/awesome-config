@@ -5,7 +5,7 @@ pcall(require, "luarocks.loader")
 -- 标准的超赞图书馆
 local gears = require("gears")
 local awful = require("awful")
---local lain = require("lain")
+local lain = require("lain")
 
 require("awful.autofocus")
 require("collision")()
@@ -72,8 +72,8 @@ awful.layout.layouts = {
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
 	  awful.layout.suit.spiral,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
+    lain.layout.termfair,
+    lain.layout.termfair.center,
     --awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
@@ -213,6 +213,35 @@ awful.screen.connect_for_each_screen(function(s)
    -- 创建wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s})
 
+		-- 创建一个cpu监控小部件
+		local cpu = lain.widget.cpu {
+    settings = function()
+        widget:set_markup(" Cpu " .. cpu_now.usage)
+    end
+
+}
+
+--  创建电池小部件
+local mybattery = lain.widget.bat {
+    timeout = 5,
+    settings = function()
+        widget:set_markup(" 🔌 " .. bat_now.perc)
+        batstat = bat_now
+    end
+}
+
+local mybattery_t = awful.tooltip {
+    objects = { mybattery.widget },
+    timer_function = function()
+        local msg = ""
+        for i = 1, #batstat.n_status do
+            msg = msg .. lain.util.markup.font("monospace 10",
+            string.format("┌[Battery %d]\n├Status:\t%s\n└Percentage:\t%s\n\n",
+            i-1, batstat.n_status[i], batstat.n_perc[i]))
+        end
+        return msg .. lain.util.markup.font("monospace 10", "Time left:\t" .. batstat.time)
+    end
+}
 
    -- 将小部件添加到wibox
     s.mywibox:setup {
@@ -228,6 +257,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+						cpu,
+						mybattery,
             mytextclock,
             s.mylayoutbox,
         },
@@ -652,4 +683,4 @@ if autorun then
 end
 
 io.popen("bash ~/.config/awesome/feh.sh &") --在这里添加了一个每次切换工作区自动切换壁纸
-
+io.popen("notify-send -t 60000 -i /mnt/home/todo-list/src/material/res.jpg \"Welcome to use\" ")
