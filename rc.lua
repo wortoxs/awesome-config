@@ -5,6 +5,8 @@ pcall(require, "luarocks.loader")
 -- 标准的超赞图书馆
 local gears = require("gears")
 local awful = require("awful")
+--local lain = require("lain")
+
 require("awful.autofocus")
 require("collision")()
 -- 小部件和布局库
@@ -66,10 +68,12 @@ awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
    -- awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    --awful.layout.suit.fair.horizontal,
 	  awful.layout.suit.spiral,
+    --lain.layout.termfair,
+    --lain.layout.termfair.center,
     --awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
@@ -78,6 +82,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
+
 -- }}}
 
 -- {{{ Menu
@@ -596,6 +601,7 @@ autorunApps =
   --"clash &",
   --"/mnt/home/todo-list/todolist &",
 	"picom --config ~/.config/awesome/src/picom.conf &",
+	"pkill kwallet",
 	"xhost +",
 	"fcitx5",
 	"/usr/lib/gsd-xsettings &",
@@ -646,3 +652,4 @@ if autorun then
 end
 
 io.popen("bash ~/.config/awesome/feh.sh &") --在这里添加了一个每次切换工作区自动切换壁纸
+

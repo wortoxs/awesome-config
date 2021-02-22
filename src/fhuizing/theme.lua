@@ -42,8 +42,8 @@ end
 
 theme.font          = "terminus 10"
 
-theme.bg_normal     = "#22222257"
-theme.bg_focus      = "#27313D90"
+theme.bg_normal     = "#22222240"
+theme.bg_focus      = "#27313D40"
 theme.bg_urgent     = "#ff0000"
 
 theme.fg_normal     = "#cacaca"
