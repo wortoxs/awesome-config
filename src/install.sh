@@ -23,8 +23,12 @@ lf /usr/share/awesome/themes | grep fhuizing
 if [ $? == 0 ];
 	then
 		echo "安装主题"
+		mv /usr/share/awesome/themes/fhuizing /usr/share/awesome/themes/fhuizing_m
+		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
+	else
 		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
 fi
+
 ls ~/.config/ | grep awesome &> /dev/null
 if [ $? == 0 ];
 then 
