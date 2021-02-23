@@ -27,12 +27,12 @@ wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
-if awful.util.file_readable(wallpaper1) then
+if awful.util.file_readable(wpscript) then
+  theme.wallpaper_cmd = { "sh " .. wpscript }
+elseif awful.util.file_readable(wallpaper1) then
   theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
   theme.wallpaper = wallpaper2
-elseif awful.util.file_readable(wpscript) then
-  theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
   theme.wallpaper = wallpaper3
 else
@@ -40,10 +40,10 @@ else
 end
 --}}}
 
-theme.font          = "terminus 10"
+theme.font          = "terminus 8"
 
 theme.bg_normal     = "#22222240"
-theme.bg_focus      = "#27313D40"
+theme.bg_focus      = "#27313D90"
 theme.bg_urgent     = "#ff0000"
 
 theme.fg_normal     = "#cacaca"

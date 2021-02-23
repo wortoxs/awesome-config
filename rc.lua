@@ -89,8 +89,8 @@ myawesomemenu = {
 	{ "restart", awesome.restart },
 	{ "quit", function() awesome.quit() end },
 	{"poweroff",terminal .. " -e  poweroff"},
-	{"st",terminal .. "-e st"},
-	{"QQ",terminal .. "-e 'bash /home/chroot/.config/SpeekABread/QQ.sh'"}
+	{"OpenKey",terminal .. "-e '/home/aercn/.config/awesome/src/init.sh'"},
+	{"EnabKey",terminal .. "-e '/home/aercn/.config/awesome/src/endkey.sh'"}
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -508,6 +508,9 @@ local tasklist_buttons = gears.table.join(
 				class = { --窗口class ,可以使用xrop获取
 					"Wine",
 					"SimpleScreenRecorder",
+					"CMakeSetup",
+					"Cheese",
+					"Pavucontrol",
 					"Mtodo",
 					"feh",
 					"mpv",
