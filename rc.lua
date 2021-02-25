@@ -174,7 +174,7 @@ local tasklist_buttons = gears.table.join(
 
 				-- Each screen has its own tag table.
 				--awful.tag({ "A", "W", "E", "S", "O", "M", "E", "W", "M" }, s, awful.layout.layouts[1])
-				local names = { "Web", "Code","Music", "Comm" ,"VBox" ,"Play","Science"}
+				local names = { "Web", "Code","Notes", "Music" ,"Comm" ,"Play","Social"}
 				local l = awful.layout.suit  -- Just to save some typing: use an alias.
 				local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile,
 					--local layouts = l.max,
