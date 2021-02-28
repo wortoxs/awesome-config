@@ -17,7 +17,7 @@ alias ters="python  ~/Terslation/translation/fanyim.py"
 alias gg=lazygit
 alias youtu="youtube-dl --proxy socks5://127.0.0.1:7891"
 alias ptom="bash ~/.config/awesome/compton.sh"
-alias initpr="bash ~/Project-directory/Project.sh"
+alias initpr="bash ~/.config/Project-directory/Project.sh"
 alias apt="bash ~/.apt.sh"
 alias yum="bash ~/.yum.sh"
 alias pac="sudo pacman"
@@ -26,6 +26,8 @@ alias book="ranger /mnt/home/PDF"
 alias Float="notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny\""
 alias re=ranger
 alias swapkey="setxkbmap -option caps:swapescape"
+alias skim="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+
 
 
 
@@ -50,15 +52,15 @@ notes="/mnt/home/notes"
 #source ~/.config/awesome/fzf.sh
 alias fnvim="nvim \$(fzf --height 40%)"
 
-
-
-\clear
+#\clear
 printf '\n%.0s' {1..$LINES}
+#printf '\n%.0s' {1..50}
+alias clear="printf '\n%.0s' {1..$LINES}"
+
 #echo -e "\033[2J \033[0m"
 #printf '\033[5 q\r'
 #alias clear="printf '\n%.0s' {1..$LINES}"
-alias clear="printf '\n%.0s' {1..50}"
-
-
+bash ~/.config/awesome/src/init.sh
 PROMPT='%{$fg[green]%}  > '
 #RPS1='%{$fg[yellow]%}%~'
+#xmodmap ~/.xmodmap &> /dev/null
