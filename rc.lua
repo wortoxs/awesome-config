@@ -88,14 +88,33 @@ myawesomemenu = {
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
 	{ "restart", awesome.restart },
 	{ "quit", function() awesome.quit() end },
-	{"poweroff",terminal .. " -e  poweroff"},
-	{"OpenKey",terminal .. "-e '/home/aercn/.config/awesome/src/init.sh'"},
-	{"EnabKey",terminal .. "-e '/home/aercn/.config/awesome/src/endkey.sh'"}
+	{"poweroff",terminal .. " -e  poweroff"}
+}
+
+-- 自定义菜单栏
+mytool = {
+	{"打开默认键盘",function ()
+		io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+		-- 打开笔记本默认键盘
+	end},
+	{"关闭默认键盘",function ()
+		io.popen("bash ~/.config/awesome/src/init.sh &")
+		-- 关闭笔记本默认键盘
+	end},
+	{"关闭触摸板",function() 
+			io.popen("bash ~/.config/awesome/src/Touch.sh &")
+			--- 关闭默认的触摸板
+	end},
+	{"打开触摸板",function() 
+			io.popen("bash ~/.config/awesome/src/OTouch.sh &")
+			--- 关闭默认的触摸板
+	end}
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
 			{ "open terminal", terminal },
-			{"setting",terminal .. "-e 'gnome-control-center'"}
+			{"setting",terminal .. "-e 'gnome-control-center'"},
+			{"tool",mytool}
 		}
 	})
 
@@ -670,4 +689,4 @@ if autorun then
 end
 
 io.popen("bash ~/.config/awesome/feh.sh &")
-io.popen("notify-send -t 60000 -i /mnt/home/todo-list/src/material/res.jpg \"Welcome to use\" ")
+io.popen("notify-send -t 60000 -i ~/.config/awesome/src/res.jpg \"Welcome to use\" ")
