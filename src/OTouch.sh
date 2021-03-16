@@ -1,2 +1,2 @@
 #!bin/bash
-xinput --enable 16
+xinput --enable  `xinput  | grep Touch | awk -F ' ' '{print $6}' | awk -F '=' '{print $2}'`

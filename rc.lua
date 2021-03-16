@@ -341,7 +341,11 @@ local tasklist_buttons = gears.table.join(
 			function()
 				awful.util.spawn("light -U 5")
 			end),
-			
+			--- 截屏
+		awful.key({modkey},"p",
+			function()
+				awful.util.spawn("flameshot gui")
+			end),
 			
 			
 		-- Layout manipulation
