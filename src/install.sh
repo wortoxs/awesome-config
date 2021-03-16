@@ -10,7 +10,7 @@ if [ $? == 0 ];
 then
 	echo "yay install"
 	yay -S picom-jonaburg-git 
-	sudo pacman -S alsa-lib feh awesome sxhkd alacritty libconfig
+	sudo pacman -S alsa-lib feh awesome  alacritty libconfig light-git
 	sudo locale-gen
 else
 	 yay 安装失败，请手动安装yay后重新启动脚本
@@ -39,15 +39,6 @@ then
 else
 	echo "mkdir awesome file 1"
 	\cp -rvf ~/awesome-config ~/.config/awesome
-fi
-ls ~/.config/ grep sxhkd &> /dev/null
-if [ $? == 0 ];
-then
-	echo "config sxhkd"
-	mv ~/.config/sxhkd ~/.config/sxhkd.mk
-	\cp -rvf ~/.config/awesome/sxhkd ~/.config/
-else
-	\cp -rvf ~/.config/awesome/sxhkd ~/.config/
 fi
 echo "克隆浮动窗口管理工具"
 ls ~/.config/awesome | grep collision &> /dev/null

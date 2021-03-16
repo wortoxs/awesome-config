@@ -93,6 +93,14 @@ myawesomemenu = {
 
 -- 自定义菜单栏
 mytool = {
+	{"关闭",function() 
+		io.popen("bash ~/.config/awesome/src/init.sh &")
+		io.popen("bash ~/.config/awesome/src/Touch.sh &")
+	end},
+	{"打开",function()
+		io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+		io.popen("bash ~/.config/awesome/src/OTouch.sh &")
+	end},
 	{"打开默认键盘",function ()
 		io.popen("bash ~/.config/awesome/src/endkey.sh &") 
 		-- 打开笔记本默认键盘
@@ -310,7 +318,32 @@ local tasklist_buttons = gears.table.join(
 			),
 		awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
 			{description = "show main menu", group = "awesome"}),
-
+		
+		-- 自定义快捷键
+		awful.key({ "Control" }, "1", 
+			function ()
+			-- 关闭
+			io.popen("bash ~/.config/awesome/src/init.sh &")
+			io.popen("bash ~/.config/awesome/src/Touch.sh &")
+		end),
+		awful.key({"Control"},"2",
+			-- 打开
+			function() 
+			io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+			io.popen("bash ~/.config/awesome/src/OTouch.sh &")
+			end),
+			-- 降低屏幕亮度
+		awful.key({"Control"},"3",
+			function()
+				awful.util.spawn("light -A 5")
+			end),
+		awful.key({"Control"},"4",
+			function()
+				awful.util.spawn("light -U 5")
+			end),
+			
+			
+			
 		-- Layout manipulation
 		awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
 			{description = "swap with next client by index", group = "client"}),
@@ -640,7 +673,6 @@ os.execute"dex -a -e fcitx"
 autorun = true
 autorunApps =  
 { 
-	"sxhkd",
 	"picom --config ~/.config/awesome/src/picom.conf &",
 	"pkill kwallet",
 	"xhost +",
