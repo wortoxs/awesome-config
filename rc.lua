@@ -346,7 +346,11 @@ local tasklist_buttons = gears.table.join(
 			function()
 				awful.util.spawn("flameshot gui")
 			end),
-			
+			--- 切换壁纸
+		awful.key({"Control"},"5",
+			function() 
+				io.popen("bash ~/.config/awesome/feh.sh &")
+			end),
 			
 		-- Layout manipulation
 		awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
