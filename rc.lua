@@ -93,6 +93,9 @@ myawesomemenu = {
 
 -- 自定义菜单栏
 mytool = {
+	{"禁用脚本",function()
+			io.popen("rm ~/.shell.lok*")
+		end },
 	{"关闭",function() 
 		io.popen("bash ~/.config/awesome/src/init.sh &")
 		io.popen("bash ~/.config/awesome/src/Touch.sh &")
@@ -201,7 +204,7 @@ local tasklist_buttons = gears.table.join(
 
 				-- Each screen has its own tag table.
 				--awful.tag({ "A", "W", "E", "S", "O", "M", "E", "W", "M" }, s, awful.layout.layouts[1])
-				local names = { "Web", "Code","Notes", "Music" ,"Comm" ,"Play","Social"}
+				local names = { "1:Web", "2:Code","3:Notes", "4:Music" ,"5:Comm" ,"6:Play","7:Social"}
 				local l = awful.layout.suit  -- Just to save some typing: use an alias.
 				local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile,
 					--local layouts = l.max,
@@ -349,7 +352,7 @@ local tasklist_buttons = gears.table.join(
 			--- 切换壁纸
 		awful.key({"Control"},"5",
 			function() 
-				io.popen("bash ~/.config/awesome/feh.sh &")
+				io.popen("feh --randomize --bg-fill ~/Imager/")
 			end),
 			
 		-- Layout manipulation
@@ -574,6 +577,7 @@ local tasklist_buttons = gears.table.join(
 					"Mtodo",
 					"feh",
 					"mpv",
+					"MPlayer",
 					"Xfce4-appfinder",
 					"Steam",
 					"Arandr",
@@ -720,7 +724,6 @@ do
 	awful.screen.padding(screen[s], { top = 10, left = 3, right = 3, bottom = 10 })
 end
 
--- io.popen("notify-send -i ~/est.jpg -t 0 \"Awesome wm\" \"github:denstiny \"")
 --
 if autorun then
 	for app = 1, #autorunApps do
@@ -730,3 +733,8 @@ end
 
 io.popen("bash ~/.config/awesome/feh.sh &")
 io.popen("notify-send -t 60000 -i ~/.config/awesome/src/res.jpg \"Welcome to use\" ")
+
+-- 自动任务
+--- 自动关闭键盘
+
+io.popen("bash ~/.config/awesome/src/blue.sh  KEYBOARD &")
