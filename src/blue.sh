@@ -2,7 +2,7 @@
 
 while true
 do
-	ls -a ~/ | grep shell.lok &> /dev/null
+	ls -a ~/ | grep shell.lok$1 &> /dev/null
 	if [ $? == 1 ]; then
 		echo "退出"$$
 		exit;
@@ -19,7 +19,7 @@ do
 	fi
 	setxkbmap -option caps:swapescape  
 	# 判断鼠标
-	xinput | grep "USB GAMING MOUSE"
+	xinput | grep -i "USB GAMING MOUSE"
 	if [ $? == 1 ];
 	then 
 		echo "open the Mouse"

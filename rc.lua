@@ -717,11 +717,11 @@ end)
 
 -- 窗口规则
 ---- 内边框
-beautiful.useless_gap = 4
+beautiful.useless_gap = 7
 ---- 外边框
 for s = 1, screen.count()
 do
-	awful.screen.padding(screen[s], { top = 10, left = 3, right = 3, bottom = 10 })
+	awful.screen.padding(screen[s], { top = -9, left = -9, right = -9, bottom = -10 })
 end
 
 --
@@ -734,7 +734,3 @@ end
 io.popen("bash ~/.config/awesome/feh.sh &")
 io.popen("notify-send -t 60000 -i ~/.config/awesome/src/res.jpg \"Welcome to use\" ")
 
--- 自动任务
---- 自动关闭键盘
-
-io.popen("bash ~/.config/awesome/src/blue.sh  KEYBOARD &")
