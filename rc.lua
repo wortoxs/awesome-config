@@ -717,11 +717,11 @@ end)
 
 -- 窗口规则
 ---- 内边框
-beautiful.useless_gap = 7
+beautiful.useless_gap = 4
 ---- 外边框
 for s = 1, screen.count()
 do
-	awful.screen.padding(screen[s], { top = -9, left = -9, right = -9, bottom = -10 })
+	awful.screen.padding(screen[s], { top = 0, left = 0, right = 0, bottom = 0 })
 end
 
 --
