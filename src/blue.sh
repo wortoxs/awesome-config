@@ -8,7 +8,7 @@ do
 		exit;
 	fi
 	# 判断键盘
-	xinput | grep "KEYCOOL KEYBOARD"
+	xinput | grep -i "KEYBOARD"
 	if [ $? == 1 ];
 	then 
 		xinput --enable AT\ Translated\ Set\ 2\ keyboard
@@ -23,10 +23,10 @@ do
 	if [ $? == 1 ];
 	then 
 		echo "open the Mouse"
-		bash ~/.config/awesome/src/OTouch.sh &
+		xinput --enable  `xinput  | grep Touch | awk -F ' ' '{print $6}' | awk -F '=' '{print $2}'`
 	else
 		echo "shut down Mouse"
-		bash ~/.config/awesome/src/Touch.sh &
+		xinput --disable  `xinput  | grep Touch | awk -F ' ' '{print $6}' | awk -F '=' '{print $2}'`
 	fi
 	sleep 3
 

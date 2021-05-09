@@ -50,7 +50,7 @@ theme.fg_normal     = "#cacaca"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 
-theme.border_width  = 2
+theme.border_width  = 0
 theme.border_normal = "#553600"
 theme.border_focus  = "#ca8e00"
 theme.border_marked = "#91231c"
