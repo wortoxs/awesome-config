@@ -9,11 +9,12 @@ ls /bin/ | grep yay &> /dev/null
 if [ $? == 0 ];
 then
 	echo "yay install"
-	sudo pacman -S alsa-lib feh awesome  alacritty libconfig light-git
+	sudo pacman -S alsa-lib feh awesome  alacritty libconfig light-git calc rofi polybar networkmanager-dmenu
 	yay -S picom-jonaburg-git 
+	pip install pywal
 	sudo locale-gen
 else
-	 yay 安装失败，请手动安装yay后重新启动脚本
+	 echo "安装失败，请手动安装yay后重新启动脚本\n"
 	 exit
 fi
 ls /bin/ | grep picom
@@ -48,7 +49,13 @@ if [ $? == 0 ];then
 else
 	 cd $HOME && git clone https://github.com/Elv13/collision.git ~/.config/awesome/collision
 fi
-
+echo "克隆安装polybar 主题"
+ls ~/ | grep polybar-themes &> /dev/null
+if [ $? == 0 ];then
+	git clone https://github.com/adi1090x/polybar-themes.git 
+	bash ~/polybar-themes/setup.sh
+fi
+	
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
 echo "感谢支持"
 notify-send -i ~/.config/awesome/src/s.jpg -t 0 如果你很喜欢 是否可以请我喝一杯奶茶
