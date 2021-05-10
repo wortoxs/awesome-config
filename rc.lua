@@ -18,6 +18,9 @@
 	local hotkeys_popup = require("awful.hotkeys_popup")
 	-- 为vim和其他应用程序启用热键帮助小部件
 	-- 当打开具有匹配名称的客户端时：
+	-- theme key
+	polybar_theme = "forest"
+	--
 	require("awful.hotkeys_popup.keys")
 
 	if awesome.startup_errors then
@@ -95,27 +98,27 @@ mytool = {
 	{"禁用脚本",function()
 			io.popen("rm ~/.shell.lok*")
 		end },
-	{"关闭",function() 
+	{"关闭",function()
 		io.popen("bash ~/.config/awesome/src/init.sh &")
 		io.popen("bash ~/.config/awesome/src/Touch.sh &")
 	end},
 	{"打开",function()
-		io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+		io.popen("bash ~/.config/awesome/src/endkey.sh &")
 		io.popen("bash ~/.config/awesome/src/OTouch.sh &")
 	end},
 	{"打开默认键盘",function ()
-		io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+		io.popen("bash ~/.config/awesome/src/endkey.sh &")
 		-- 打开笔记本默认键盘
 	end},
 	{"关闭默认键盘",function ()
 		io.popen("bash ~/.config/awesome/src/init.sh &")
 		-- 关闭笔记本默认键盘
 	end},
-	{"关闭触摸板",function() 
+	{"关闭触摸板",function()
 			io.popen("bash ~/.config/awesome/src/Touch.sh &")
 			--- 关闭默认的触摸板
 	end},
-	{"打开触摸板",function() 
+	{"打开触摸板",function()
 			io.popen("bash ~/.config/awesome/src/OTouch.sh &")
 			--- 关闭默认的触摸板
 	end}
@@ -320,9 +323,9 @@ local tasklist_buttons = gears.table.join(
 			),
 		awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
 			{description = "show main menu", group = "awesome"}),
-		
+
 		-- 自定义快捷键
-		awful.key({ "Control" }, "1", 
+		awful.key({ "Control" }, "1",
 			function ()
 			-- 关闭
 			io.popen("bash ~/.config/awesome/src/init.sh &")
@@ -330,8 +333,8 @@ local tasklist_buttons = gears.table.join(
 		end),
 		awful.key({"Control"},"2",
 			-- 打开
-			function() 
-			io.popen("bash ~/.config/awesome/src/endkey.sh &") 
+			function()
+			io.popen("bash ~/.config/awesome/src/endkey.sh &")
 			io.popen("bash ~/.config/awesome/src/OTouch.sh &")
 			end),
 			-- 降低屏幕亮度
@@ -350,10 +353,15 @@ local tasklist_buttons = gears.table.join(
 			end),
 			--- 切换壁纸
 		awful.key({"Control"},"5",
-			function() 
+			function()
 				io.popen("feh --randomize --bg-fill ~/Imager/")
 			end),
-			
+			-- 锁屏
+		awful.key({modkey},"l",
+			function()
+				io.popen("/usr/lib/xscreensaver/gluqlo -root")
+			end),
+
 		-- Layout manipulation
 		awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
 			{description = "swap with next client by index", group = "client"}),
@@ -426,7 +434,11 @@ local tasklist_buttons = gears.table.join(
 			end,
 			{description = "lua execute prompt", group = "awesome"}),
 		-- Menubar
-		awful.key({ modkey }, "o", function() menubar.show() end,
+		awful.key({ modkey }, "o",
+		function()
+			--menubar.show()
+			io.popen("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/"..polybar_theme.."/scripts/rofi/launcher.rasi")
+		end,
 			{description = "show the menubar", group = "launcher"})
 		)
 
@@ -487,7 +499,7 @@ local tasklist_buttons = gears.table.join(
 					if tag then
 						tag:view_only()
 					end
-					--io.popen("bash /home/aerocn/.config/awesome/feh.sh &") 
+					--io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
 				end,
 				{description = "view tag #"..i, group = "tag"}),
 			-- Toggle tag display.
@@ -579,6 +591,7 @@ local tasklist_buttons = gears.table.join(
 					"MPlayer",
 					"Xfce4-appfinder",
 					"Steam",
+					"test1",
 					"Arandr",
 					"Blueman-manager",
 					"Gpick",
@@ -591,8 +604,8 @@ local tasklist_buttons = gears.table.join(
 					--"Google-chrome",
 				"xtightvncviewer"},
 
-				-- Note that the name property shown in xprop might be set slightly after creation of the client
-				-- and the name shown there might not match defined rules here.
+				-- 请注意，在创建客户端后，可能会稍微设置xprop中显示的name属性
+				-- 并且此处显示的名称可能与此处定义的规则不匹配.
 				name = {
 					"Event Tester",  -- xev.
 				},
@@ -609,8 +622,10 @@ local tasklist_buttons = gears.table.join(
 		},
 
 		-- Set Firefox to always map on the tag named "2" on screen 1.
-		-- { rule = { class = "Firefox" },
-		--   properties = { screen = 1, tag = "2" } },
+		-- { "1:Web", "2:Code","3:Notes", "4:Music" ,"5:Comm" ,"6:Play","7:Social"} 
+		 { rule = { instance = "lx-music-desktop" },
+		   properties = { screen = 1, tags = { "1:Web", "2:Code","3:Notes", "4:Music" ,"5:Comm" ,"6:Play","7:Social"}   ,focusable = false, below = true} },
+		   -- focusable 聚焦
 	}
 	-- }}}
 
@@ -682,8 +697,8 @@ os.execute"dex -a -e fcitx"
 
 -- 开启自动启动
 autorun = true
-autorunApps =  
-{ 
+autorunApps =
+{
 	"picom --config ~/.config/awesome/src/picom.conf &",
 	"pkill kwallet",
 	"xhost +",
@@ -732,4 +747,6 @@ end
 
 io.popen("bash ~/.config/awesome/feh.sh &")
 io.popen("notify-send -t 60000 -i ~/.config/awesome/src/res.jpg \"Welcome to use\" ")
-io.popen("bash ~/.config/polybar/launch.sh --forest")
+io.popen("bash ~/.config/polybar/launch.sh --"..polybar_theme)
+
+
