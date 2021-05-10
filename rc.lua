@@ -499,7 +499,6 @@ local tasklist_buttons = gears.table.join(
 					if tag then
 						tag:view_only()
 					end
-					--io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
 				end,
 				{description = "view tag #"..i, group = "tag"}),
 			-- Toggle tag display.
@@ -539,7 +538,8 @@ local tasklist_buttons = gears.table.join(
 
 	clientbuttons = gears.table.join(
 		awful.button({ }, 1, function (c)
-			c:emit_signal("request::activate", "mouse_click", {raise = true})
+			c:emit_signal("request::activate", "mouse_click", {raise = true});
+			client.focus = c; c:raise() -- 设置鼠标左键从新获得焦点
 		end),
 		awful.button({ modkey }, 1, function (c)
 			c:emit_signal("request::activate", "mouse_click", {raise = true})
@@ -591,7 +591,7 @@ local tasklist_buttons = gears.table.join(
 					"MPlayer",
 					"Xfce4-appfinder",
 					"Steam",
-					"test1",
+					"test",
 					"Arandr",
 					"Blueman-manager",
 					"Gpick",
@@ -714,7 +714,6 @@ autorunApps =
 
 
 
---io.popen("bash /home/aerocn/.config/awesome/feh.sh &")
 
 
 
@@ -745,8 +744,6 @@ if autorun then
 	end
 end
 
-io.popen("bash ~/.config/awesome/feh.sh &")
+io.popen("bash ~/.config/awesome/src/feh.sh &")
 io.popen("notify-send -t 60000 -i ~/.config/awesome/src/res.jpg \"Welcome to use\" ")
 io.popen("bash ~/.config/polybar/launch.sh --"..polybar_theme)
-
-
