@@ -20,7 +20,7 @@ do
 	setxkbmap -option caps:swapescape  
 	# 判断鼠标
 	xinput | grep -i "USB GAMING MOUSE"
-	if [ $? == 1 ];
+	if [ $? == 0 ];
 	then 
 		echo "open the Mouse"
 		xinput --enable  `xinput  | grep Touch | awk -F ' ' '{print $6}' | awk -F '=' '{print $2}'`

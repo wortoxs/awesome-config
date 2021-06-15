@@ -14,5 +14,5 @@ do
 		exit;
 	fi
 	feh --randomize --bg-fill ~/Imager/
-	sleep 360
+	sleep 3600
 done

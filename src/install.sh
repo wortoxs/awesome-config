@@ -9,7 +9,7 @@ ls /bin/ | grep yay &> /dev/null
 if [ $? == 0 ];
 then
 	echo "yay install"
-	sudo pacman -S alsa-lib feh awesome  alacritty libconfig light-git calc rofi polybar networkmanager-dmenu
+	sudo pacman -S alsa-lib feh awesome  alacritty libconfig light-git calc rofi polybar networkmanager-dmenu 
 	yay -S picom-jonaburg-git 
 	pip install pywal
 	sudo locale-gen
@@ -21,15 +21,15 @@ ls /bin/ | grep picom
 if [ $? == 1 ];then
 	 echo "picom安装失败，请稍候根据帮助文档手动安装 回车继续" && read
 fi
-lf /usr/share/awesome/themes | grep fhuizing
-if [ $? == 0 ];
-	then
-		echo "安装主题"
-		mv /usr/share/awesome/themes/fhuizing /usr/share/awesome/themes/fhuizing_m
-		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
-	else
-		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
-fi
+# lf /usr/share/awesome/themes | grep fhuizing
+# if [ $? == 0 ];
+# 	then
+# 		echo "安装主题"
+# 		mv /usr/share/awesome/themes/fhuizing /usr/share/awesome/themes/fhuizing_m
+# 		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
+# 	else
+# 		sudo cp -rf ~/awesome-config/src/fhuizing /usr/share/awesome/themes
+# fi
 
 ls ~/.config/ | grep awesome &> /dev/null
 if [ $? == 0 ];
@@ -49,11 +49,13 @@ if [ $? == 0 ];then
 else
 	 cd $HOME && git clone https://github.com/Elv13/collision.git ~/.config/awesome/collision
 fi
+
 echo "克隆安装polybar 主题"
 ls ~/ | grep polybar-themes &> /dev/null
-if [ $? == 0 ];then
+if [ $? == 1 ];then
 	git clone https://github.com/adi1090x/polybar-themes.git 
-	bash ~/polybar-themes/setup.sh
+	cd ~/polybar-themes
+	bash setup.sh
 fi
 	
 echo "安装完成,你可以使用Win+s显示快捷键的帮助文档哦"
