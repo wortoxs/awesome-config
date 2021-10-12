@@ -60,6 +60,15 @@ globalkeys = gears.table.join(
         awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%",
         function() awesome.emit_signal("volume_refresh") end)
         end, {description = "lower volume by 5%", group = "audio"}),
+	-- Brightness
+	awful.key({modkey, 			   }, "F8", function()
+        awful.spawn.easy_async_with_shell("light -A 5",
+        function() awesome.emit_signal("volume_refresh") end)
+	end,{description = "Set the brightness to improve", group = "brightness"}),
+	awful.key({modkey, 			   }, "F9", function()
+        awful.spawn.easy_async_with_shell("light -U 5",
+        function() awesome.emit_signal("volume_refresh") end)
+	end,{ description = "Set the brightness to reduce", group = "brightness"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
