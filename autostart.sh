@@ -17,7 +17,8 @@ picom --config ~/.config/awesome/config/picom.conf &
 run clash
 run fcitx5
 run flameshot
-
+run obs
+run qv2ray
 
 ####  swap Esc caps
 setxkbmap -option caps:swapescape   
