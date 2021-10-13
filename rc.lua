@@ -91,7 +91,22 @@ awful.rules.rules = {
 
     -- Floating clients.
     { rule_any = {
-      }, properties = { floating = true }},
+        class = {
+          "Arandr",
+		  "Blueberry.py",
+          "Gpick",
+          "Kruler",
+          "MessageWin", 
+          "MPlayer",
+          "Sxiv",
+          "Wpa_gui",
+          "pinentry",
+          "veromix",
+          "xtightvncviewer"},
+	}, properties = { floating = true }},
+
+
+
 
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
