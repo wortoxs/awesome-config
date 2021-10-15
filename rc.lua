@@ -105,9 +105,6 @@ awful.rules.rules = {
           "xtightvncviewer"},
 	}, properties = { floating = true }},
 
-
-
-
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
