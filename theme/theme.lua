@@ -23,7 +23,7 @@ theme.bg_minimize   = "#1b1f27"
 theme.bg_systray    = theme.bg_normal
 
 theme.useless_gap   = 20
-theme.border_width  = 0
+theme.border_width  = 1
 theme.border_radius = 20
 theme.border_normal = "#3f4859"
 theme.border_focus  = "#3f4859"
