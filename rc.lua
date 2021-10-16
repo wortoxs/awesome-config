@@ -18,6 +18,8 @@ require("config.titlebar")
 require("config.key")
 require("config.bar")
 require("config.menu")
+require("collision")()
+
 
 bling.module.flash_focus.enable()
 
@@ -38,11 +40,11 @@ awful.screen.connect_for_each_screen(function(s)
       bg = "#1b1f27", 
       offset_y = 20,  
       offset_x = 20,  
-      font = "Sarasa Mono K Bold",   
+      font = "Sarasa Mono K Bold",
       font_size = 8, 
       padding = 100,   
       zickzack = true  
-  })
+  	})
 end)
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")

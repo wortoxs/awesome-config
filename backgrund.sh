@@ -12,7 +12,7 @@ else
 fi
 
 feh --randomize --bg-fill ~/Imager/ &> /dev/null
-sleep 6000
+sleep 1800
 touch ~/.shell.lok$$ 
 
 while true
@@ -25,5 +25,5 @@ do
 	fi
 	feh --randomize --bg-fill ~/Imager/
 	echo "1"
-	sleep 6000
+	sleep 1800
 done
