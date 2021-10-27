@@ -69,6 +69,11 @@ globalkeys = gears.table.join(
         awful.spawn.easy_async_with_shell("light -U 5",
         function() awesome.emit_signal("volume_refresh") end)
 	end,{ description = "Set the brightness to reduce", group = "brightness"}),
+	-- lock screen
+	awful.key({modkey, 		       }, "u", function()
+		awful.spawn.easy_async_with_shell("i3lock -i ~/.config/awesome/theme/china.png") end, 
+		{description = "Screen lock screen"}
+	),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,

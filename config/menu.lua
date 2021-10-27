@@ -25,7 +25,7 @@ myapps = {
     { "File", fm },
     { "Browser", browser },
     { "Editor", vscode },
-    { "Kitty", terminal },
+    { "st-color256", terminal },
     { "Discord", discord }
 }
 

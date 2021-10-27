@@ -6,4 +6,8 @@ Theme from [this](https://github.com/ChocolateBread799/Awesomewm_Dots.git)
 
 ## Rofi configuration
 Configuration from the [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes#grayblocks)
+## install shell
+```sh
+cd aweosme-config && bash ./install.sh
+```
 

@@ -100,6 +100,7 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin", 
           "MPlayer",
+		  "Pavucontrol",
           "Sxiv",
           "Wpa_gui",
           "pinentry",
@@ -110,12 +111,6 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
-    { rule = { instance = "netease-cloud-music"},
-    	properties = { screen = 1, tags = { "1", "2","3", "4" ,"5" ,"6"},
-    		focusable = false, above = true, maximized_vertical = false, maximized_horizontal = false,border_width = 0
-    	} 
-    },
-
 }
 
 

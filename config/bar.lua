@@ -48,7 +48,7 @@ bling.widget.tag_preview.enable {
 awful.screen.connect_for_each_screen(function(s)
 
     -- Set tags and default layout
-    awful.tag({"1", "2", "3", "4", "5","6"}, s,   awful.layout.suit.tile)
+    awful.tag({"1", "2", "3", "4", "5","6","7"}, s,   awful.layout.suit.tile)
     
     local taglist_buttons = gears.table.join(
         awful.button({ }, 1, function(t) t:view_only() end),
