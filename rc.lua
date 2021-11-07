@@ -103,6 +103,8 @@ awful.rules.rules = {
 		  "Pavucontrol",
           "Sxiv",
           "Wpa_gui",
+		  "nodeTreeGui",
+		  "Main",
           "pinentry",
           "veromix",
           "xtightvncviewer"},
