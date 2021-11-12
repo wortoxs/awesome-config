@@ -97,6 +97,7 @@ awful.rules.rules = {
           "Arandr",
 		  "Blueberry.py",
           "Gpick",
+		  "Yad",
           "Kruler",
           "MessageWin", 
           "MPlayer",
