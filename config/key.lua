@@ -71,7 +71,7 @@ globalkeys = gears.table.join(
 	end,{ description = "Set the brightness to reduce", group = "brightness"}),
 	-- lock screen
 	awful.key({modkey, 		       }, "u", function()
-		awful.spawn.easy_async_with_shell("i3lock -i ~/.config/awesome/theme/china.png") end, 
+		awful.spawn.easy_async_with_shell("i3lock -i ~/.config/awesome/theme/awesomem_mk.png") end, 
 		{description = "Screen lock screen"}
 	),
 
