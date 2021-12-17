@@ -1,4 +1,5 @@
 * Aerocn Awesome
+*** Using the main branch to obtain better experience
 ** Awesome wm configuration
 #+ATTR_ORG: :width 800px
 [[./src/a.png]]
