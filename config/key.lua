@@ -52,11 +52,11 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Audio
-	awful.key({modkey,              }, "Up", function()
+	awful.key({"Control",              }, "Up", function()
         awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%",
         function() awesome.emit_signal("volume_refresh") end)
     end, { description = "raise volume by 5%", group = "audio" }),
-    awful.key({modkey,              }, "Down", function()
+    awful.key({"Control",              }, "Down", function()
         awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%",
         function() awesome.emit_signal("volume_refresh") end)
         end, {description = "lower volume by 5%", group = "audio"}),
@@ -74,7 +74,11 @@ globalkeys = gears.table.join(
 		awful.spawn.easy_async_with_shell("i3lock -i ~/.config/awesome/theme/awesomem_mk.png") end, 
 		{description = "Screen lock screen"}
 	),
-
+	-- emacs client
+	awful.key({modkey,"Shift" 	   }, "Return", function()
+		awful.spawn.easy_async_with_shell("emacsclient -c -a \"emacs\"") end, 
+		{description = "start emasc client"}
+	),
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),

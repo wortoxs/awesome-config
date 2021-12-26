@@ -16,10 +16,10 @@ theme.font          = "Sarasa Mono K 13"
 
 theme.dir = string.format('%s/.config/awesome/theme', os.getenv('HOME'))
 
-theme.bg_normal     = "#1b1f27"
-theme.bg_focus      = "#1b1f27"
-theme.bg_urgent     = "#1b1f27"
-theme.bg_minimize   = "#1b1f27"
+theme.bg_normal     = "#24283B"
+theme.bg_focus      = "#24283B"
+theme.bg_urgent     = "#24283B"
+theme.bg_minimize   = "#24283B"
 theme.bg_systray    = theme.bg_normal
 
 theme.useless_gap   = 20

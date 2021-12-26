@@ -9,7 +9,7 @@ function run {
 }
 
 # Resolution
-xrandr --output DP-1 --mode 1920x1080 --rate 164.97 &
+xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1 --auto &
 
 # Compositor
 systemctl start v2raya.service
@@ -19,8 +19,10 @@ run fcitx5
 run flameshot
 run obs
 run qv2ray
+# open start emacs server
+run emacs --daemon
 
 ####  swap Esc caps
-setxkbmap -option caps:swapescape   
+setxkbmap -option caps:swapescape
 ###  Change the wallpaper
 ~/.config/awesome/backgrund.sh
