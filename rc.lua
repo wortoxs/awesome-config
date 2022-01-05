@@ -96,6 +96,7 @@ awful.rules.rules = {
         class = {
           "Arandr",
 		  "Blueberry.py",
+          "mpv",
           "Gpick",
 		  "Yad",
           "Kruler",
@@ -114,6 +115,11 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
+
+    { rule = { instance = "surf" },
+      properties = {screen = 1,tags = {"1","2","3","4","5","6","7"},
+                    floating = true,below=true ,x =0,y=0,maximized=true,fullscreen=true} 
+    },
 }
 
 
@@ -130,6 +136,13 @@ end)
 --     c:emit_signal("request::activate", "mouse_enter", {raise = true})
 -- end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) 
+    c.border_color = beautiful.border_focus 
+    c.opacity = 0.9
+end)
+
+client.connect_signal("unfocus", function(c) 
+    c.border_color = beautiful.border_normal 
+    c.opacity = 0.96
+end)
 -- }}}

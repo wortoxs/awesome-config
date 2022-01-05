@@ -40,8 +40,7 @@ bling.widget.tag_preview.enable {
         awful.placement.top(c, {
             margins = {
                 top = 70
-            }
-        }) 
+            } }) 
     end           
 }   
 
@@ -214,7 +213,7 @@ awful.screen.connect_for_each_screen(function(s)
         height = 35,
         width = 900,
         stretch = false,
-        bg = "#1b1f27",
+        bg = "#24283B", -- bar bg color
         border_width = 2,
         border_color = "#3f4859";
     })
