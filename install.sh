@@ -39,7 +39,7 @@ install_rely() {
 		sudo pacman -S xorg-xbacklight
 		sudo usermod -a -G video $USER
 	fi
-	if [[ ! -d "/usr/share/i3lock"]]; then
+	if [[ ! -d "/usr/share/i3lock" ]]; then
 		echo -e "\n   [*]install i3-lock"
 		sudo pacman -S i3lock
 	fi
