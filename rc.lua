@@ -18,7 +18,6 @@ require("config.titlebar")
 require("config.key")
 require("config.bar")
 require("config.menu")
-require("collision")()
 
 
 bling.module.flash_focus.enable()
