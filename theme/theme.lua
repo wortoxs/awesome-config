@@ -22,7 +22,7 @@ theme.bg_urgent     = "#24283B"
 theme.bg_minimize   = "#24283B"
 theme.bg_systray    = theme.bg_normal
 
-theme.useless_gap   = 20
+theme.useless_gap   = 18
 theme.border_width  = 1
 theme.border_radius = 20
 theme.border_normal = "#3f4859"
