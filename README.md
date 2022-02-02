@@ -40,3 +40,7 @@ cd aweosme-config && bash ./install.sh
 
 ## default configuration
 - terminal [kitty](https://github.com/denstiny/awesome-config/blob/4411f7469d61bf049c1cb36e515534135cbe31cb/config/menu.lua#L9)
+- `autostart.sh` 当awesome wm启动时自动执行的任务,根据自己需要进行相应的注释和添加
+- `$HOME/Imager` 当你运行完我的`install.sh` 脚本，会在家目录下创建这个文件夹，把你需要的壁纸图片放在这个目录下面，配置文件会自动设置背景
+- `config/key.lua` 快捷键配置文件
+- `theme/theme.lua` 主题配置文件
