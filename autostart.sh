@@ -9,7 +9,10 @@ function run {
 }
 
 # Resolution
-xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1 --auto &
+#xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1 --auto &
+xrandr --output HDMI-1 --auto --primary
+xrandr --output eDP-1 --right-of HDMI1 --auto
+xrandr --output eDP-1 --rotate left
 
 # Compositor
 systemctl start v2raya.service
