@@ -22,7 +22,7 @@ theme.bg_urgent     = "#24283B"
 theme.bg_minimize   = "#24283B"
 theme.bg_systray    = theme.bg_normal
 
-theme.useless_gap   = 20
+theme.useless_gap   = 18
 theme.border_width  = 1
 theme.border_radius = 20
 theme.border_normal = "#3f4859"
@@ -34,7 +34,7 @@ theme.border_marked = "#3f4859"
 theme.taglist_fg = "#80d1ff"
 theme.taglist_fg_empty = "#3f4859"
 theme.taglist_fg_occupied = "#949eb3"
-theme.taglist_font = "Sarasa Mono K Bold 13"
+theme.taglist_font = "SHYF-2020 14"
 
 -- menu
 

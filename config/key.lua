@@ -16,7 +16,7 @@ root.buttons(gears.table.join(
 ))
 
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,"Control"           }, "k",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -37,7 +37,7 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    awful.key({ modkey,           }, "q", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
               awful.key({ modkey, "Shift"   }, "e", awesome.quit,
@@ -61,11 +61,11 @@ globalkeys = gears.table.join(
         function() awesome.emit_signal("volume_refresh") end)
         end, {description = "lower volume by 5%", group = "audio"}),
 	-- Brightness
-	awful.key({"Mod4", 			   }, "a", function()
+	awful.key({modkey,"Escape" 	   }, "1", function()
         awful.spawn.easy_async_with_shell("light -A 5",
         function() awesome.emit_signal("volume_refresh") end)
 	end,{description = "Set the brightness to improve", group = "brightness"}),
-	awful.key({"Mod4", 			   }, "d", function()
+	awful.key({modkey,"Escape" 			   }, "2", function()
         awful.spawn.easy_async_with_shell("light -U 5",
         function() awesome.emit_signal("volume_refresh") end)
 	end,{ description = "Set the brightness to reduce", group = "brightness"}),
@@ -79,6 +79,14 @@ globalkeys = gears.table.join(
 		awful.spawn.easy_async_with_shell("emacsclient -c -a \"emacs\"") end, 
 		{description = "start emasc client"}
 	),
+    -- swap screen
+    awful.key({modkey,             }, "w", function ()
+        awful.screen.focus_relative(1) end,
+        {description = "A monitor switch"}),
+
+    awful.key({modkey,"Shift"      }, "w", function ()
+        awful.screen.focus_relative(-1) end,
+        {description = "A monitor switch"}),
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -228,10 +236,12 @@ clientbuttons = gears.table.join(
 )
 
 
+_my_tags = {"","a","s","d","f","z","x","c"}
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
-        awful.key({ modkey }, "#" .. i + 9,
+        --awful.key({ modkey }, "#".. i + 9,
+        awful.key({ modkey }, _my_tags[i + 1],
                   function ()
                         local screen = awful.screen.focused()
                         local tag = screen.tags[i]
@@ -251,7 +261,8 @@ for i = 1, 9 do
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
-        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+        --awful.key({ modkey, "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Shift" }, _my_tags[i + 1],
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
