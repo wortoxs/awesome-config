@@ -34,7 +34,7 @@ theme.border_marked = "#3f4859"
 theme.taglist_fg = "#80d1ff"
 theme.taglist_fg_empty = "#3f4859"
 theme.taglist_fg_occupied = "#949eb3"
-theme.taglist_font = "SHYF-2020 14"
+theme.taglist_font = "SHYF-2020 16"
 
 -- menu
 
