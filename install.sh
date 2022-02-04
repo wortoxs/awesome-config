@@ -29,7 +29,7 @@ install_awesome_configuration() {
 	fi
 	if [[ ! -d "$PDIR" ]]; then
 		echo -e "\n[*] cp configuration"
-		cp -rf ../awesome-config $PDIR
+		cp -rf ../awesome $PDIR
 	fi
 }
 # install awesome  rely on

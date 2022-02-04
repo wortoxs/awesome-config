@@ -62,15 +62,15 @@ globalkeys = gears.table.join(
         end, {description = "lower volume by 5%", group = "audio"}),
 	-- Brightness
 	awful.key({modkey,"Escape" 	   }, "v", function()
-        awful.spawn.easy_async_with_shell("light -A 5",
+        awful.spawn.easy_async_with_shell("xbacklight -dec 15",
         function() awesome.emit_signal("volume_refresh") end)
 	end,{description = "Set the brightness to improve", group = "brightness"}),
 	awful.key({modkey,"Escape" 	   }, "b", function()
-        awful.spawn.easy_async_with_shell("light -U 5",
+        awful.spawn.easy_async_with_shell("xbacklight -inc 15",
         function() awesome.emit_signal("volume_refresh") end)
 	end,{ description = "Set the brightness to reduce", group = "brightness"}),
 	-- lock screen
-	awful.key({modkey, 		       }, "u", function()
+	awful.key({modkey, 		       }, "w", function()
 		awful.spawn.easy_async_with_shell("i3lock -i ~/.config/awesome/theme/awesomem_mk.png") end, 
 		{description = "Screen lock screen"}
 	),
@@ -94,7 +94,7 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "e", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey}, "p", function () awful.util.spawn("flameshot gui") end, 
+    awful.key({ modkey}, "e", function () awful.util.spawn("flameshot gui") end, 
               {description = "take screenshot", group = "screen"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -126,7 +126,7 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
     -- Menubar
-    awful.key({ modkey }, "o", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
+    awful.key({ modkey }, "q", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -137,7 +137,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey,           }, "i",      function (c) c:kill()                         end,
+    awful.key({ modkey,"Shift"           }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -236,7 +236,7 @@ clientbuttons = gears.table.join(
 )
 
 
-_my_tags = {"","a","s","d","f","q","w","e"}
+_my_tags = {"","a","s","d","f","i","o","p"}
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
