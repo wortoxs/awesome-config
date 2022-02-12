@@ -28,4 +28,4 @@ run qv2ray
 ####  swap Esc caps
 #setxkbmap -option caps:swapescape
 ###  Change the wallpaper
-~/.config/awesome/backgrund.sh
+bash ~/.config/awesome/backgrund.sh

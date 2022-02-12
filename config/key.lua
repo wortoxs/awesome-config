@@ -8,7 +8,7 @@ require("awful.hotkeys_popup.keys")
 require("awful.autofocus")
 
 modkey = "Mod4"
-
+rofi_theme = "rofi" -- rofi theme  [' rofi ','rofi-default']
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 root.buttons(gears.table.join(
@@ -126,8 +126,8 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
     -- Menubar
-    awful.key({ modkey }, "q", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
-              {description = "show the menubar", group = "launcher"})
+    awful.key({ modkey }, "q", function() awful.util.spawn("rofi -theme ~/.config/awesome/rofis/"..rofi_theme .."/config.rasi  -show drun") end,
+              {description = "show the menubar", group = "rofi theme"})
 )
 
 clientkeys = gears.table.join(
