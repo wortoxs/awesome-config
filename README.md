@@ -1,7 +1,7 @@
 # This is minimalist theme
 Theme author [this](https://github.com/ChocolateBread799)
 ![2021-09-23_13-39.png](https://i.loli.net/2021/09/23/d8AMNkLbXYV4zlE.png)
-
+Currently an open version, the self-use version is LiKedoo, it will continue to update
 
 ## Rofi configuration
 Configuration from the [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes#grayblocks)
